@@ -52,3 +52,9 @@ More info
 .. _`HPy blog`: blog/
 .. _`Github repository`: https://github.com/hpyproject/hpy/
 .. _`Mailing list`: https://mail.python.org/mailman3/lists/hpy-dev.python.org/
+
+Recent blog posts
+==================
+
+.. post-list::
+   :stop: 5
