@@ -54,7 +54,7 @@ More info
 
 - `Github repository`_
 
-- "#hpy IRC channel on the Freenode_ server
+- #hpy IRC channel on the Freenode_ server
 
 .. _`Official docs`: : https://hpy.readthedocs.io/en/latest/
 .. _`HPy blog`: blog/
