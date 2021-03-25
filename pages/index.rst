@@ -37,6 +37,40 @@ What are the advantages of HPy?
 .. _PyPy: https://pypy.org
 .. _GraalPython:  https://www.graalvm.org/python
 
+Current status
+==============
+
+HPy is still in an early stage of development and there is no official release
+yet. We hope to make our first alpha release in the next months but we don't
+have any ETA.
+
+The Python/C API is huge and at the moment only a small fraction of it is
+available in HPy. We are experimenting by porting existing extensions to HPy
+and adding/designing new functionalities on a per-need basis.
+
+We welcome your design input or adventurous alpha testing.
+
+HPy-compatible extensions
+=========================
+
+The extensions that we are experimenting with include:
+
+- ultrajson-hpy_: this was the first real-world module to be ported to HPy. It is
+  a nice fit because it only exports functions (as opposed as custom types)
+  and requires only a small number of API functions.
+
+- piconumpy_: as the name suggests, this is a minimal numpy-like module which
+  defines a custom type (similar to ``ndarray`` but with many fewer features of
+  course).
+
+- numpy-hpy_: one of our ambitious goals is to port numpy to HPy, and to use this
+  experience to better understand how to design the API. This is still at a
+  **very** early stage though.
+
+.. _ultrajson-hpy: https://github.com/hpyproject/ultrajson-hpy
+.. _piconumpy: https://github.com/hpyproject/piconumpy
+.. _numpy-hpy: https://github.com/hpyproject/numpy-hpy/
+
 This website and the logo are ugly
 ===================================
 
