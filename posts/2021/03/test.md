@@ -2,6 +2,7 @@
 .. title: Test
 .. slug: test
 .. date: 2021-03-24 13:51:44 UTC
+.. author: Antonio Cuni
 .. tags: 
 .. category: 
 .. link: 
