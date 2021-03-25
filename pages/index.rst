@@ -48,7 +48,7 @@ The Python/C API is huge and at the moment only a small fraction of it is
 available in HPy. We are experimenting by porting existing extensions to HPy
 and adding/designing new functionalities on a per-need basis.
 
-We welcome your design input or adventurous alpha testers.
+We welcome your design input or adventurous alpha testing.
 
 HPy-compatible extensions
 ==========================
