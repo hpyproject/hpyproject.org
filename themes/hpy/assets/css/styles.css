@@ -43,10 +43,37 @@ pre.literal-block *:last-child {
     clear: both;
 }
 
+/* bootstrap-like container sizes at various breakpoints */
+
 #container {
   margin: 1em auto;
-  max-width: 800px;
+  max-width: 100%;
 }
+
+@media (min-width: 576px) {
+  #container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  #container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  #container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #container {
+    max-width: 1140px;
+  }
+}
+
 
 .post {
     float: left;
@@ -103,9 +130,6 @@ div.sidebar {
   div.sidebar {
     display: none;
   }
-  #container {
-    max-width: 100%;
-  }
   div.post {
     width: 95%;
   }
@@ -144,7 +168,7 @@ div.sidebar {
   text-decoration: none;
 }
 
-.content {
+#content {
   margin: 0 auto;
 }
 
@@ -221,12 +245,6 @@ body {
 
 
 @media only screen and (max-width: 798px) {
-    #container {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-    }
-
     #content {
         margin: 10px;
         padding: 0;
