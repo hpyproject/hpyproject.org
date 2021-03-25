@@ -57,14 +57,14 @@ The extensions that we are experimenting with include:
 
 - ultrajson-hpy_: this was the first real-world module to be ported to HPy. It is
   a nice fit because it only exports functions (as opposed as custom types)
-  and require only a small number of API functions.
+  and requires only a small number of API functions.
 
 - piconumpy_: as the name suggests, this is a minimal numpy-like module which
-  defines a custom type (similar to ``ndarray`` but with much less features of
+  defines a custom type (similar to ``ndarray`` but with many fewer features of
   course).
 
 - numpy-hpy_: one of our ambitious goals is to port numpy to HPy, and to use this
-  experience to better understand how to design the API. This is still is a
+  experience to better understand how to design the API. This is still at a
   **very** early stage though.
 
 .. _ultrajson-hpy: https://github.com/hpyproject/ultrajson-hpy
