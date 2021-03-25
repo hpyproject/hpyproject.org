@@ -37,6 +37,14 @@ What are the advantages of HPy?
 .. _PyPy: https://pypy.org
 .. _GraalPython:  https://www.graalvm.org/python
 
+This website and the logo are ugly
+===================================
+
+We know: we have expertise in Virtual Machines, Compilers, low-level
+programming, etc, but zero expertise in web development or graphic
+design. `PRs are welcome ;) <https://github.com/hpyproject/hpyproject.org/>`_
+
+
 More info
 =========
 
@@ -46,12 +54,13 @@ More info
 
 - `Github repository`_
 
-- #hpy on freenode
+- "#hpy IRC channel on the Freenode_ server
 
 .. _`Official docs`: : https://hpy.readthedocs.io/en/latest/
 .. _`HPy blog`: blog/
 .. _`Github repository`: https://github.com/hpyproject/hpy/
 .. _`Mailing list`: https://mail.python.org/mailman3/lists/hpy-dev.python.org/
+.. _Freenode: https://freenode.net/
 
 Recent blog posts
 ==================
