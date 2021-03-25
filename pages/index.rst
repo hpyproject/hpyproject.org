@@ -51,7 +51,7 @@ and adding/designing new functionalities on a per-need basis.
 We welcome your design input or adventurous alpha testing.
 
 HPy-compatible extensions
-==========================
+=========================
 
 The extensions that we are experimenting with include:
 
