@@ -86,14 +86,15 @@ There are a bunch of things which immediately pop to the eyes:
   makes the whole API more regular and make it possible to develop new
   interesting features such as the
   [Universal ABI](https://docs.hpyproject.org/en/latest/overview.html#term-HPy-Universal-ABI)
-  and the (Debug mode)[https://github.com/hpyproject/hpy/pull/142].
+  and the [Debug mode](https://github.com/hpyproject/hpy/pull/142).
 
 - HPy introduces the concept of `HPyDef`s. `HPyDef_METH` is a macro which
-  generates the definition of an `HPyDef` global variable named `add`, which
-  is a method implemented by the C function `add_impl`. In this specific
-  example `HPyDef_METH` contains more or less the same informations as the old
-  `PyMethodDef`, but `HPyDef` are more general. For example, when defining
-  custom types you can use things like `HPyDef_SLOT`, `HPyDef_GETSET`, etc.
+  generates the definition of an `HPyDef` static constant named `add`, which
+  represents the definition of a Python method implemented by the C function
+  `add_impl`. In this specific example `HPyDef_METH` contains more or less the
+  same informations as the old `PyMethodDef`, but `HPyDef` are more
+  general. For example, when defining custom types you can use things like
+  `HPyDef_SLOT`, `HPyDef_GETSET`, etc.
 
 - Notice that we no longer need the cast to `(PyCFunction)`. One of the
   biggest advantages of `HPyDef_METH` is that since it's a macro, it can
@@ -132,7 +133,7 @@ static HPy init_hello_new_impl(HPyContext *ctx) {
 ```
 
 This is pretty similar to the old code. The biggest change is that instead of
-declaring an rray of `PyMethodDef`, we create an array of `HPyDef` as
+declaring an array of `PyMethodDef`, we create an array of `HPyDef` as
 discussed above.
 
 Finally, we need to modify `setup.py`: compiling an HPy extension is as easy
