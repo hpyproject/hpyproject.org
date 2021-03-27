@@ -21,6 +21,8 @@ Python community. Hopefully, now that this blog is online we will do a better
 job at periodically communicating the status of HPy, so make sure to
 [subscribe to the RSS feed](/rss.xml).
 
+<!--TEASER_END-->
+
 What is HPy? Show me an example
 ================================
 
