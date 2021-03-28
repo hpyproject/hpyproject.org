@@ -23,16 +23,50 @@ job at periodically communicating the status of HPy, so make sure to
 
 <!--TEASER_END-->
 
-What is HPy? Show me an example
-================================
+What is HPy?
+============
 
 Quoting the frontpage of our website:
 
 > HPy provides a new API for extending Python in C. In other words, you use
 > `#include <hpy.h>` instead of `#include <Python.h>`.
 
-But admittedly this is a bit obscure, better to show some code to make things
-clearer. 
+The official [Python/C API](https://docs.python.org/3/c-api/index.html>) is
+specific to the current implementation of CPython: it exposes a lot of
+internal details which makes it hard:
+
+  - to implement it for other Python implementations (e.g. PyPy, GraalPython,
+    Jython, IronPython, etc.)
+
+  - to experiment with new things inside CPython itself: e.g. using a GC
+    instead of refcounting, or to remove the GIL.
+
+Over the years, it has become evident that
+[emulating the Python/C API in an efficient way is challenging](https://www.pypy.org/posts/2018/09/inside-cpyext-why-emulating-cpython-c-8083064623681286567.html),
+if not impossible. The main goal of HPy is provide a C API which is possible
+to implement in an efficient way on a number of very diverse
+implementations.
+
+There are several advantages to write your C extension in HPy:
+
+  - it runs much faster on PyPy, and at native speed on CPython
+
+  - it is possible to compile a single binary which runs unmodified on all
+    supported Python implementations and versions
+
+  - it is simpler and more manageable than the Python/C API
+
+  - it provides an improved debugging experience: in "debug mode", HPy
+    actively checks for many common mistakes such as reference leaks and
+    invalid usage of objects after they have been deleted. It is possible to
+    turn the "debug mode" on at startup time, without needing to recompile
+    Python or the extension itself
+
+See also the official docs for a more in-depth
+[overview](https://docs.hpyproject.org/en/latest/overview.html#hpy-overview).
+
+Show me an example
+===================
 
 This is a "normal" Python/C extension:
 
