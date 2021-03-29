@@ -20,10 +20,10 @@ BLOG_AUTHOR = "The HPy Team"  # (translatable)
 BLOG_TITLE = "HPy"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://hpyproject.github.io/"
+SITE_URL = "https://hpyproject.org/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://hpyproject.github.io/"
+# BASE_URL = "https://hpyproject.org/"
 BLOG_EMAIL = "hpy-dev@python.org"
 BLOG_DESCRIPTION = "A better C API for Python"  # (translatable)
 
