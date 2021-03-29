@@ -32,7 +32,7 @@ Quoting the frontpage of our website:
 > `#include <hpy.h>` instead of `#include <Python.h>`.
 
 The official [Python/C API](https://docs.python.org/3/c-api/index.html>) is
-specific to the current implementation of CPython: it exposes a lot of
+specific to the current implementation of CPython: it exposes many
 internal details which makes it hard:
 
   - to implement it for other Python implementations (e.g. PyPy, GraalPython,
@@ -40,14 +40,14 @@ internal details which makes it hard:
 
   - to experiment with new things inside CPython itself: e.g. using a GC
     instead of refcounting, or to remove the GIL.
-
+  - to correctly check things like refcount handling: the external API gets mixed in with implementation details that should be hidded.
 Over the years, it has become evident that
 [emulating the Python/C API in an efficient way is challenging](https://www.pypy.org/posts/2018/09/inside-cpyext-why-emulating-cpython-c-8083064623681286567.html),
-if not impossible. The main goal of HPy is provide a C API which is possible
-to implement in an efficient way on a number of very diverse
+if not impossible. The main goal of HPy is expose a C API which is possible
+to implement in an efficient way on a number of very diverse Python
 implementations.
 
-There are several advantages to write your C extension in HPy:
+There are several advantages to writing your C extension in HPy:
 
   - it runs much faster on PyPy, and at native speed on CPython
 
@@ -109,7 +109,7 @@ static HPy add_impl(HPyContext ctx, HPy self, HPy *args, HPy_ssize_t nargs) {
 }
 ```
 
-There are a bunch of things which immediately pop to the eyes:
+There are a bunch of things which are different from the usual C-extension module:
 
 - the former `PyObject *` is now `HPy`, which we call "a handle". Handles are
   similar to `PyObject *`, but are completely opaque: for more information,
@@ -118,8 +118,8 @@ There are a bunch of things which immediately pop to the eyes:
 
 - There is an additional parameter, `HPyContext ctx`. One of the problems of
   the old API is that often it implicitly relies on the existence of a
-  per-thread or per-subinterpreter local state. `HPyContext` make it explicit,
-  makes the whole API more regular and make it possible to develop new
+  per-thread or per-subinterpreter local state. `HPyContext` makes this state explicit. This
+  makes the whole API more regular and makes it possible to develop new
   interesting features such as the
   [Universal ABI](https://docs.hpyproject.org/en/latest/overview.html#term-HPy-Universal-ABI)
   and the [Debug mode](https://github.com/hpyproject/hpy/pull/142).
@@ -180,7 +180,7 @@ This is pretty similar to the old code. The biggest change is that instead of
 declaring an array of `PyMethodDef`, we create an array of `HPyDef` as
 discussed above.
 
-Finally, we need to modify `setup.py`: compiling an HPy extension is as easy
+Finally, we need to modify `setup.py`. Compiling an HPy extension is as easy
 as adding `setup_requires=['hpy.devel']` and use `hpy_ext_modules`:
 
 {{% listing 2021/03/hello-hpy/setup.py python %}}
@@ -338,7 +338,7 @@ $ /path/to/pypy-c-jit-101860-a2f7c80062e8-linux64/bin/pypy
 ```
 
 That's all you need to get started with HPy. What we presented today is just
-the basic of course: in the next posts we will dig more into the technical
+the basics, of course: in the next posts we will dig more into the technical
 details, and show more interesting features than just a hello world.
 
 Stay tuned!
