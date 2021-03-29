@@ -13,7 +13,7 @@
 Welcome to the shiny new HPy blog!
 
 HPy has been around for a while now. The initial discussion started during
-EuroPython 2019, at the good old times when we could still go to conferences
+EuroPython 2019, in the good old times when we could still go to conferences
 and have real-life meetings. Since then, HPy progressed **a lot** from the
 point of view of the actual code, but we have been a bit too silent
 w.r.t. communicating what we are doing to the external world and to the broader
@@ -40,7 +40,7 @@ internal details which makes it hard:
 
   - to experiment with new things inside CPython itself: e.g. using a GC
     instead of refcounting, or to remove the GIL.
-  - to correctly check things like refcount handling: the external API gets mixed in with implementation details that should be hidded.
+  - to correctly check things like refcount handling: the external API gets mixed in with implementation details that should be hidden.
 
 Over the years, it has become evident that
 [emulating the Python/C API in an efficient way is challenging](https://www.pypy.org/posts/2018/09/inside-cpyext-why-emulating-cpython-c-8083064623681286567.html),
