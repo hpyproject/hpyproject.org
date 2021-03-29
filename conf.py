@@ -1380,7 +1380,7 @@ GLOBAL_CONTEXT['utterances_config'] = {'issue-term':"title",
         'label':"Comments",
         'theme':"github-light",
         'crossorigin':"anonymous",
-        'repo': 'hpyproject/hpyproject.github.io',
+        'repo': 'hpyproject/hpyproject.org',
     }
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
