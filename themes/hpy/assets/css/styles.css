@@ -352,5 +352,6 @@ tbody tr:nth-child(odd) {
   background-color: #eeeeee;
 }
 
-
-
+.metadata {
+    border-bottom: 1px solid darkolivegreen;
+}
