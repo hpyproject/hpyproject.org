@@ -90,7 +90,7 @@ More info
 
 - #hpy IRC channel on the Freenode_ server
 
-.. _`Official docs`: : https://hpy.readthedocs.io/en/latest/
+.. _`Official docs`: https://hpy.readthedocs.io/en/latest/
 .. _`HPy blog`: blog/
 .. _`Github repository`: https://github.com/hpyproject/hpy/
 .. _`Mailing list`: https://mail.python.org/mailman3/lists/hpy-dev.python.org/
