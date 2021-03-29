@@ -2,7 +2,7 @@
 .. title: Hello, HPy
 .. slug: hello-hpy
 .. date: 2021-03-29 10:00:00 UTC
-.. author: Antonio Cuni
+.. author: antocuni
 .. tags: 
 .. category: 
 .. link: 
