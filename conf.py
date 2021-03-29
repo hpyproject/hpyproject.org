@@ -24,7 +24,7 @@ SITE_URL = "https://hpyproject.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://hpyproject.github.io/"
-BLOG_EMAIL = "hpy-dev@python.ord"
+BLOG_EMAIL = "hpy-dev@python.org"
 BLOG_DESCRIPTION = "A better C API for Python"  # (translatable)
 
 # Nikola is multilingual!
