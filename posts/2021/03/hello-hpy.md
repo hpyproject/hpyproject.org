@@ -165,7 +165,7 @@ static HPyDef *hello_defines[] = {
 
 static HPyModuleDef moduledef = {
     HPyModuleDef_HEAD_INIT,
-    .m_name = "hello_old",
+    .m_name = "hello_new",
     .m_doc = "hello example using the new HPy API",
     .m_size = -1,
     .defines = hello_defines,
