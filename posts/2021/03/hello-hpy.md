@@ -194,9 +194,9 @@ extensions on both CPython and PyPy.
 
 At the moment HPy is still in its early stages and the API is still subject to
 change, so we have not done any official release yet. For the same reason, if
-you want to use HPy on PyPy, you need to manually ensure to install a version
-which is supported. This is just temporary, and this kind of things will be
-sorted out automatically once we start to roll out official releases.
+you want to use HPy on PyPy or GraalPython, you need to manually ensure to install
+a version which is supported. This is just temporary, and this kind of things will
+be sorted out automatically once we start to roll out official releases.
 
 So, we need to install HPy from the github repo. Moreover, the HPy
 implementation inside PyPy is lagging behind a little, so we will install a
@@ -208,6 +208,8 @@ slightly old revision:
 
 - PyPy nighly builds: [main page](http://buildbot.pypy.org/nightly/) and
   [hpy branch](http://buildbot.pypy.org/nightly/hpy/)
+  
+- GraalPython nightly build: [Linux](https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.1.0-dev-20210330_0726/graalpython-dev-linux-amd64.tar.gz) or [macOS](https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.1.0-dev-20210330_0726/graalpython-dev-macos-amd64.tar.gz)
 
 - [source code](https://github.com/hpyproject/hpyproject.org/tree/main/listings/2021/03/hello-hpy) of this example
 
@@ -233,6 +235,18 @@ $ ./pypy-c-jit-101860-a2f7c80062e8-linux64/bin/pypy
 >>>> import hpy.universal
 >>>> hpy.universal.get_version()
 ('0.1.dev959+geb07982', 'eb07982')
+```
+
+For GraalPython, just unpack the tarball and create a venv:
+
+```shell
+$ curl -LO https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.1.0-dev-20210330_0726/graalpython-dev-linux-amd64.tar.gz
+$ tar xzf graalpython-dev-linux-amd64.tar.gz
+$ graalpython-21.1.0-dev-linux-amd64/bin/graalpython -m venv hpy-venv
+$ hpy-venv/bin/graalpython
+>>> import hpy.universal
+>>> hpy.universal.get_version()
+>>> ('0.1.dev950+g98f448a', '98f448a')
 ```
 
 Now that our enviroment is ready, we can compile and try our extensions:
@@ -336,6 +350,15 @@ $ /path/to/pypy-c-jit-101860-a2f7c80062e8-linux64/bin/pypy
 >>>> hello_new.__file__
 '/.../hello-hpy/hello_new.hpy.so'
 >>>>
+```
+
+Similarly, it also just works on GraalPython:
+
+```shell
+$ /path/to/graalpython/hpy-venv/bin/graalpython
+>>> import hello_new
+>>> hello_new.add(10, 20)
+30
 ```
 
 That's all you need to get started with HPy. What we presented today is just
