@@ -25,7 +25,7 @@ What are the advantages of HPy?
 - **Debug Mode**: in debug mode, you can easily identify common problems such
   as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
   you ever forgot a ``Py_INCREF`` or ``Py_DECREF``? The HPy debug mode will
-  detect this mistakes for you.
+  detect these mistakes for you.
 
 - **Universal binaries**: extensions built for the *HPy Universal ABI* can be
   loaded unmodified on CPython, PyPy, GraalPython, etc.
