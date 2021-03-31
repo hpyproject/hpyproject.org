@@ -199,8 +199,8 @@ a version which is supported. This is just temporary, and this kind of things wi
 be sorted out automatically once we start to roll out official releases.
 
 So, we need to install HPy from the github repo. Moreover, the HPy
-implementation inside PyPy is lagging behind a little, so we will install a
-slightly old revision:
+implementation inside PyPy and GraalPython are lagging behind a little, so we will
+install a slightly old revision:
 
 - [HPy revision eb07982](https://github.com/hpyproject/hpy/commit/eb07982)
 
