@@ -10,6 +10,8 @@
 
 What is HPy?
 ============
+Pronounced /h/ - pie
+--------------------
 
 HPy provides a new API for extending Python in C.  In other words, you use
 ``#include <hpy.h>`` instead of ``#include <Python.h>``.
