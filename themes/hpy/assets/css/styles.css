@@ -172,6 +172,10 @@ div.sidebar {
   margin: 0 auto;
 }
 
+.nav-container {
+  position: relative;
+}
+
 .nav-container nav {
   float: right;
   background: var(--nav-background);
