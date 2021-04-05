@@ -10,8 +10,6 @@
 
 What is HPy?
 ============
-Pronounced /h/ - pie
---------------------
 
 HPy provides a new API for extending Python in C.  In other words, you use
 ``#include <hpy.h>`` instead of ``#include <Python.h>``.
@@ -91,6 +89,8 @@ More info
 - `Github repository`_
 
 - #hpy IRC channel on the Freenode_ server
+
+- HPy is pronounced /h/ - pie
 
 .. _`Official docs`: https://hpy.readthedocs.io/en/latest/
 .. _`HPy blog`: blog/
