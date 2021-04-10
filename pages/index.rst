@@ -90,6 +90,8 @@ More info
 
 - #hpy IRC channel on the Freenode_ server
 
+- HPy is pronounced `/h/ - pie` (or using IPA notation: `/eɪtʃ-paɪ/`)
+
 .. _`Official docs`: https://hpy.readthedocs.io/en/latest/
 .. _`HPy blog`: blog/
 .. _`Github repository`: https://github.com/hpyproject/hpy/
