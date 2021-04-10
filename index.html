@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HPy - A better C API for Python | HPy</title>
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://hpyproject.org/">
+<link rel="icon" href="favicon2.ico" sizes="16x16">
+<link rel="icon" href="favicon32x32.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/css/tipuesearch.css">
+<meta name="author" content="The HPy Team">
+<meta property="og:site_name" content="HPy">
+<meta property="og:title" content="HPy - A better C API for Python">
+<meta property="og:url" content="https://hpyproject.org/">
+<meta property="og:description" content="What is HPy?
+HPy provides a new API for extending Python in C.  In other words, you use
+#include &lt;hpy.h&gt; instead of #include &lt;Python.h&gt;.
+
+
+What are the advantages of HPy?
+
+Zero overhead on CPython: ex">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-03-21T16:14:02Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+             <header id="header"><!-- Adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar --><section class="navigation"><div class="nav-container">
+            <div class="brand">
+                <a href="#">
+                    <image id="toplogo" src="images/hpy-logo.svg" width="75px;" alt="HPy/"></image></a>
+            </div>
+            <nav><ul class="nav-list">
+<li> <a href="https://hpy.readthedocs.io/">Dev Docs</a> </li>  
+            <li> 
+                <a href="#!">Blog</a>
+                <ul class="nav-dropdown">
+<li> <a href="blog">Index</a> </li>  
+                    <li> <a href="categories">Tags</a> </li>  
+                    <li> <a href="archive.html">Archive by year</a> </li>  
+                    <li> <a href="rss.xml">RSS feed</a> </li>  
+                </ul>
+</li>
+
+                </ul></nav><div class="nav-mobile">
+                <a id="nav-toggle" href="#!"> <span></span></a>
+            </div>
+        </div>
+    </section><div class="searchform" role="search">
+                
+<form class="navbar-form navbar-left" action="search.html" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search…" autocomplete="off">
+</div>
+    <input type="submit" value="Local Search" style="visibility: hidden;">
+</form>
+
+            </div>
+    </header><main id="content"><article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">HPy - A better C API for Python</a></h1>
+
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<section id="what-is-hpy"><h2>What is HPy?</h2>
+<p>HPy provides a new API for extending Python in C.  In other words, you use
+<code class="docutils literal">#include &lt;hpy.h&gt;</code> instead of <code class="docutils literal">#include &lt;Python.h&gt;</code>.</p>
+</section><section id="what-are-the-advantages-of-hpy"><h2>What are the advantages of HPy?</h2>
+<ul class="simple">
+<li><p><strong>Zero overhead</strong> on CPython: extensions written in HPy runs at the same
+speed as "normal" extensions.</p></li>
+<li><p><strong>Much faster</strong> on alternative implementations such as <a class="reference external" href="https://pypy.org">PyPy</a>, <a class="reference external" href="https://www.graalvm.org/python">GraalPython</a>.</p></li>
+<li><p><strong>Debug Mode</strong>: in debug mode, you can easily identify common problems such
+as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
+you ever forgot a <code class="docutils literal">Py_INCREF</code> or <code class="docutils literal">Py_DECREF</code>? The HPy debug mode will
+detect these mistakes for you.</p></li>
+<li><p><strong>Universal binaries</strong>: extensions built for the <em>HPy Universal ABI</em> can be
+loaded unmodified on CPython, PyPy, GraalPython, etc.</p></li>
+<li><p><strong>Nicer API</strong>: the standard Python/C API shows its age. HPy is designed to
+overcome some of its limitations, be more consistent, produce better quality
+extensions and to make it harder to introduce bugs.</p></li>
+</ul></section><section id="current-status"><h2>Current status</h2>
+<p>HPy is still in an early stage of development and there is no official release
+yet. We hope to make our first alpha release in the next months but we don't
+have any ETA.</p>
+<p>The Python/C API is huge and at the moment only a small fraction of it is
+available in HPy. We are experimenting by porting existing extensions to HPy
+and adding/designing new functionalities on a per-need basis.</p>
+<p>We welcome your design input or adventurous alpha testing.</p>
+</section><section id="hpy-compatible-extensions"><h2>HPy-compatible extensions</h2>
+<p>The extensions that we are experimenting with include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/hpyproject/ultrajson-hpy">ultrajson-hpy</a>: this was the first real-world module to be ported to HPy. It is
+a nice fit because it only exports functions (as opposed as custom types)
+and requires only a small number of API functions.</p></li>
+<li><p><a class="reference external" href="https://github.com/hpyproject/piconumpy">piconumpy</a>: as the name suggests, this is a minimal numpy-like module which
+defines a custom type (similar to <code class="docutils literal">ndarray</code> but with many fewer features of
+course).</p></li>
+<li><p><a class="reference external" href="https://github.com/hpyproject/numpy-hpy/">numpy-hpy</a>: one of our ambitious goals is to port numpy to HPy, and to use this
+experience to better understand how to design the API. This is still at a
+<strong>very</strong> early stage though.</p></li>
+</ul></section><section id="this-website-and-the-logo-are-ugly"><h2>This website and the logo are ugly</h2>
+<p>We know: we have expertise in Virtual Machines, Compilers, low-level
+programming, etc, but zero expertise in web development or graphic
+design. <a class="reference external" href="https://github.com/hpyproject/hpyproject.org/">PRs are welcome ;)</a></p>
+</section><section id="more-info"><h2>More info</h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://hpy.readthedocs.io/en/latest/">Official docs</a></p></li>
+<li><p><a class="reference external" href="blog/">HPy blog</a></p></li>
+<li><p><a class="reference external" href="https://github.com/hpyproject/hpy/">Github repository</a></p></li>
+<li><p>#hpy IRC channel on the <a class="reference external" href="https://freenode.net/">Freenode</a> server</p></li>
+<li><p>HPy is pronounced <cite>/h/ - pie</cite> (or using IPA notation: <cite>/eɪtʃ-paɪ/</cite>)</p></li>
+</ul></section><section id="recent-blog-posts"><h2>Recent blog posts</h2>
+<!-- Begin post-list post_list_ebdb4d588ee2400885b86cf426d9b248 -->
+<div id="post_list_ebdb4d588ee2400885b86cf426d9b248" class="post-list">
+    <ul class="post-list">
+<li class="post-list-item">
+            2021-03-29 10:00
+             
+            <a href="blog/posts/2021/03/hello-hpy/">Hello, HPy</a>
+            </li>
+    </ul>
+</div>
+<!-- End post-list post_list_ebdb4d588ee2400885b86cf426d9b248 -->
+</section>
+</div>
+    </div>
+    
+</article></main><footer id="footer"><p>
+</p>
+<div class="myfooter">
+  <div>
+    <img src="images/hpy-logo.svg" alt="PyPy Logo">
+</div>
+  <div class="logotext">
+     Contents © 2021 <a href="mailto:hpy-dev@python.org">The HPy Team</a>
+    Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+  </div>
+  <div style="margin-left: auto">
+  <a href="rss.xml">RSS feed</a>
+</div>
+
+            
+        
+
+    </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script><script src="assets/js/styles.js"></script></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="hello_old.c">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hello_old.c | HPy</title>
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://hpyproject.org/listings/2021/03/hello-hpy/hello_old.c.html">
+<link rel="icon" href="../../../../favicon2.ico" sizes="16x16">
+<link rel="icon" href="../../../../favicon32x32.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/tipuesearch.css">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+             <header id="header"><!-- Adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar --><section class="navigation"><div class="nav-container">
+            <div class="brand">
+                <a href="../../../../index.html">
+                    <image id="toplogo" src="../../../../images/hpy-logo.svg" width="75px;" alt="HPy/"></image></a>
+            </div>
+            <nav><ul class="nav-list">
+<li> <a href="https://hpy.readthedocs.io/">Dev Docs</a> </li>  
+            <li> 
+                <a href="#!">Blog</a>
+                <ul class="nav-dropdown">
+<li> <a href="../../../../blog">Index</a> </li>  
+                    <li> <a href="../../../../categories">Tags</a> </li>  
+                    <li> <a href="../../../../archive.html">Archive by year</a> </li>  
+                    <li> <a href="../../../../rss.xml">RSS feed</a> </li>  
+                </ul>
+</li>
+
+                </ul></nav><div class="nav-mobile">
+                <a id="nav-toggle" href="#!"> <span></span></a>
+            </div>
+        </div>
+    </section><div class="searchform" role="search">
+                
+<form class="navbar-form navbar-left" action="../../../../search.html" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search…" autocomplete="off">
+</div>
+    <input type="submit" value="Local Search" style="visibility: hidden;">
+</form>
+
+            </div>
+    </header><main id="content"><nav class="breadcrumbs"><ul class="breadcrumb">
+<li><a href="../../../">listings</a></li>
+                <li><a href="../../">2021</a></li>
+                <li><a href="../">03</a></li>
+                <li><a href=".">hello-hpy</a></li>
+                <li>hello_old.c</li>
+</ul></nav><h1>hello_old.c
+            <small><a href="hello_old.c">(Source)</a></small>
+        </h1>
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-1"></a><span class="cp">#include</span> <span class="cpf">&lt;Python.h&gt;</span><span class="cp"></span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-3"></a><span class="k">static</span> <span class="n">PyObject</span><span class="o">*</span> <span class="n">add</span><span class="p">(</span><span class="n">PyObject</span><span class="o">*</span> <span class="n">self</span><span class="p">,</span> <span class="n">PyObject</span><span class="o">*</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-4"></a>    <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-5"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s">"ll"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">))</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-6"></a>        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-7"></a>    <span class="k">return</span> <span class="nf">PyLong_FromLong</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-8"></a><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-9"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-10"></a><span class="k">static</span> <span class="n">PyMethodDef</span> <span class="n">HelloMethods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-11"></a>    <span class="p">{</span><span class="s">"add"</span><span class="p">,</span> <span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">add</span><span class="p">,</span> <span class="n">METH_VARARGS</span><span class="p">,</span> <span class="s">"add two integers"</span><span class="p">},</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-12"></a>    <span class="p">{</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-13"></a><span class="p">};</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-14"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-15"></a><span class="k">static</span> <span class="k">struct</span> <span class="nc">PyModuleDef</span> <span class="n">moduledef</span> <span class="o">=</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-16"></a>    <span class="n">PyModuleDef_HEAD_INIT</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-17"></a>    <span class="s">"hello_old"</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-18"></a>    <span class="s">"hello example using the old Python/C API"</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-19"></a>    <span class="mi">-1</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-20"></a>    <span class="n">HelloMethods</span><span class="p">,</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-21"></a><span class="p">};</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-22"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-23"></a><span class="n">PyMODINIT_FUNC</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-24"></a><span class="nf">PyInit_hello_old</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-25"></a>    <span class="k">return</span> <span class="n">PyModule_Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">moduledef</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="#listings202103hello-hpyhello_oldc-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a name="listings202103hello-hpyhello_oldc-26"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+         </main><footer id="footer"><p>
+</p>
+<div class="myfooter">
+  <div>
+    <img src="../../../../images/hpy-logo.svg" alt="PyPy Logo">
+</div>
+  <div class="logotext">
+     Contents © 2021 <a href="mailto:hpy-dev@python.org">The HPy Team</a>
+    Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+  </div>
+  <div style="margin-left: auto">
+  <a href="../../../../rss.xml">RSS feed</a>
+</div>
+
+            
+        
+
+    </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script><script src="../../../../assets/js/styles.js"></script></footer>
+</div>
+</body>
+</html>
