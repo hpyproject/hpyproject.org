@@ -35,7 +35,7 @@ with HPy include:
   - Compile an extension in either "universal" or "cpython" modes (see below)
   - Put a "universal" extension into debug mode **at runtime** (see below
     for how this is possible without a performance penalty).
-  - Compile extensions for POSIX and Windows (MSC).
+  - Compile extensions for POSIX and Windows (MSVC).
 
 An extension written using HPy may be compiled either in "cpython" or
 "universal" mode:
