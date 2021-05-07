@@ -53,7 +53,7 @@ Debug mode is implemented by replacing the HPy context with a debug mode
 context at runtime. The debug context wraps the original context and tracks
 all HPy API calls. Debug mode already supports finding handles that are
 leaked (i.e. not closed) and handles that are used after being closed.
-Additional debug features should now be fairly straightforward to add.
+Additional debug features will be fairly straightforward to add, like for example checking for `NULL` pointers or detecting whether the user is trying to call a function without holding the GIL.
 
 The debug mode is written using HPy itself, so its implementation can be
 shared by different Python implementations that support HPy.
