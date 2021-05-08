@@ -12,8 +12,9 @@
 
 
 HPy's first git commit was on Friday, 12 July 2019. Despite the crazy state
-of the world, HPy has come a long way since then. This is a quick update
-to say where we are now and what's planned for the immediate future.
+of the world, [HPy](https://github.com/hpyproject/hpy/) has come a long way
+since then. This is a quick update to say where we are now and what's planned
+for the immediate future.
 
 <!--TEASER_END-->
 
