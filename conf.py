@@ -248,8 +248,7 @@ TIMEZONE = "UTC"
 # The format is a dictionary of {source: relative destination}.
 # Default is:
 FILES_FOLDERS = {
-    'files/talks': 'talks',
-    #'files': ''
+    'files': ''
 }
 # Which means copy 'files' into 'output'
 
