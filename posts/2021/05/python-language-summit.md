@@ -1,7 +1,7 @@
 <!--
 .. title: HPy @ Python Language Summit
 .. slug: hpy-python-language-summit
-.. date: 2021-05-12 12:00:00 UTC
+.. date: 2021-05-12 10:00:00 UTC
 .. author: antocuni
 .. tags:
 .. category:
