@@ -8,7 +8,7 @@
 }
 
 :visited {
-    color: darkolivegreen;
+    color: purple;
 }
 
 .reference:hover {
@@ -25,7 +25,7 @@ pre.literal-block {
 }
 
 pre.literal-block *:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .myfooter {
@@ -341,7 +341,7 @@ body {
 #download img {
   width: 22px;
   height: 22px;
-} 
+}
 
 table {
   border-top: 2px solid darkolivegreen;
