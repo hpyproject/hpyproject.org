@@ -7,13 +7,18 @@
   --link-hover-color: #e0dad5;
 }
 
-:visited {
-    color: darkolivegreen;
+:link {
+    color: #3344dd;
+    text-decoration: underline;
 }
 
-.reference:hover {
-    color: white;
-    background-color: #d0dad5;
+:visited :link:hover, :visited:hover {
+    color: #3344dd;
+}
+
+#brand :link,
+#brand :visited {
+    color: inherit;
 }
 
 pre.literal-block {
