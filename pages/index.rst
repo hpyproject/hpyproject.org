@@ -88,7 +88,10 @@ More info
 
 - `Github repository`_
 
-- #hpy IRC channel on the Freenode_ server
+- #hpy IRC channel on the `Libera.Chat`_ server
+
+  * **NOTE**: the official #hpy channel used to be on Freenode, `but it is no
+    longer the case`_
 
 - HPy is pronounced `/h/ - pie` (or using IPA notation: `/eɪtʃ-paɪ/`)
 
@@ -96,7 +99,8 @@ More info
 .. _`HPy blog`: blog/
 .. _`Github repository`: https://github.com/hpyproject/hpy/
 .. _`Mailing list`: https://mail.python.org/mailman3/lists/hpy-dev.python.org/
-.. _Freenode: https://freenode.net/
+.. _`but it is no longer the case`: /blog/posts/2021/05/hpy-irc-moves-to-libera-chat/
+.. _`Libera.Chat`: https://libera.chat/
 
 Recent blog posts
 ==================
