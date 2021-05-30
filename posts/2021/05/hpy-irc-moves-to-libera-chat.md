@@ -14,7 +14,7 @@ Because of the
 [recent news about Freenode](https://arstechnica.com/gadgets/2021/05/freenode-irc-has-been-taken-over-by-the-crown-prince-of-korea/)
 and following the example of many other FOSS projects, the HPy team has
 decided to move its official ``#hpy`` IRC channel from Freenode to
-[Libera.Chat](https://libera.chat/).
+[Libera.Chat](https://libera.chat/): [irc.libera.chat/hpy](irc://irc.libera.chat/hpy)
 
 The current channel on Freenode will soon be dismissed, so we recommend to
 join the new channel as soon as possible.

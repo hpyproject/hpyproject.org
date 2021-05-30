@@ -88,7 +88,7 @@ More info
 
 - `Github repository`_
 
-- #hpy IRC channel on the `Libera.Chat`_ server
+- #hpy IRC channel on the `Libera.Chat`_ server: `irc.libera.chat/hpy <irc://irc.libera.chat/hpy>`_
 
   * **NOTE**: the official #hpy channel used to be on Freenode, `but it is no
     longer the case`_
