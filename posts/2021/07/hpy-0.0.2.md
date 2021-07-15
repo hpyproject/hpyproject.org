@@ -36,6 +36,14 @@ For CPython, you need to install it manually, using pip:
 $ pip install hpy==0.0.2
 ```
 
+!!! Note
+
+    Currently, we provide only the `sdist` (i.e., the `.tar.gz`, no binary
+    wheels). See also
+    [issue #223](https://github.com/hpyproject/hpy/issues/223), contributions
+    are welcome :).
+
+
 PyPy and GraalPython ships their own version of HPy, so no installation is
 necessary. HPy 0.0.2 will be included in the next release of both, i.e. PyPy
 x.x.x (expected on 2021-xx-xx) and GraalPython y.y.y (expected on
