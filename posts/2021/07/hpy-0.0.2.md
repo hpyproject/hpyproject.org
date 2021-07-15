@@ -1,7 +1,7 @@
 <!--
 .. title: hpy 0.0.2: First public release
 .. slug: hpy-0.0.2-first-public-release
-.. date: 2021-07-15 14:00:00 UTC
+.. date: 2021-07-15 15:00:00 UTC
 .. author: antocuni
 .. tags:
 .. category:
@@ -30,6 +30,10 @@ the
 Installation
 ============
 
+HPy 0.0.2 only supports Linux systems, and it's only tested on
+`x86_64`. Windows support is already present on master, and it will be
+included in the next release.
+
 For CPython, you need to install it manually, using pip:
 
 ```
@@ -49,7 +53,7 @@ necessary. HPy 0.0.2 will be included in the next release of both, i.e. PyPy
 7.3.6 (expected in October 2021) and GraalPython 21.2.0 (expected on
 2021-07-20). In the meantime, you can download a nightly build:
 
-  - [PyPy 3.7 nightly builds](http://buildbot.pypy.org/nightly/py3.7/)
+  - [PyPy 3.7 nightly builds](http://buildbot.pypy.org/nightly/py3.7/), for example [revision 3bf99c09018b](http://buildbot.pypy.org/nightly/py3.7/pypy-c-jit-102761-3bf99c09018b-linux64.tar.bz2)
 
   - GraalPython: download the latest `graalpython-dev` package from
     [this page](https://github.com/graalvm/graalvm-ce-dev-builds/releases)
