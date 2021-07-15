@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-hpy 0.0.2 is out! This is the first version which is officially released and
+HPy 0.0.2 is out! This is the first version which is officially released and
 made available on PyPI.
 
 The major highlight of this release is that it is supported by three different
