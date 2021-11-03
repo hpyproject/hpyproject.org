@@ -133,43 +133,12 @@ Debug Mode
 ===
 
 One of the great features of HPy is the _debug mode_. It was already introduced
-a while ago (and therefore already include in release 0.0.2) but it got two new
-features that can help C extension developers a lot.
-HPy's debug mode is now able to track closed handles and users now have the
-possibility to register a callback that is invoked when an invalid handle is
-accessed.
-
-For example, if you would access a close handle, the debug mode reports that and
-by default such errors are fatal:
-
-```
-HPyDef_METH(f, "f", f_impl, HPyFunc_O)
-static HPy f_impl(HPyContext *ctx, HPy self, HPy arg)
-{
-    HPy h = HPy_Dup(ctx, arg);
-    HPy_Close(ctx, h);
-    /* The following close will operate on an invalid handle and thus cause a
-    fatal error */
-    HPy_Close(ctx, h);
-    return HPy_Dup(ctx, ctx->h_None);
-}
-```
-
-Since it should be possible to detect several problems with the debug mode in
-one run, it's not useful to crash on the first invalid access. Therefore, it is
-possible to register a custom callback function in Python that allows to take
-some action in such cases:
-
-```
-n = 0
-def callback():
-    nonlocal n
-    n += 1
-_debug.set_on_invalid_handle(callback)
-# calls the above HPy function 'f_impl'
-mod.f('something')
-assert n == 1
-```
+a while ago (and therefore already included in release 0.0.2) but it got a new
+feature that can help C extension developers a lot. HPy's debug mode is now able
+to track closed handles. Previously, it was not guaranteed that accesses to
+closed handles will cause a fatal error. This is because it's possible that
+another object is associated with the closed handle. Then the program would just
+operate on the wrong object. The new feature is able to prevent that.
 
 Examples
 ========
