@@ -74,7 +74,7 @@ API
 ===
 
 HPy is still under heavy development and does not yet provide as many API
-functions as Python's C API but more and more pieces are added.
+functions as Python's C API, but more and more pieces are being added.
 In this release, we've added following functions:
 
   - `HPy_Is`
@@ -97,8 +97,9 @@ PyObject *object_b = /* ... */;
 return object_a == object_b;
 ```
 
-Since HPy was deliberately designed to prevent such comparisons, you need to use
-the newly introduced function:
+In HPy, direct comparisons of handles are forbidden by design, because distinct
+handles can point to the same object. To compare objects by identity, you need
+to use `HPy_Is`:
 
 ```
 HPy object_a = /* ... */;
