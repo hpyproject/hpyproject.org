@@ -34,6 +34,12 @@ What are the advantages of HPy?
   overcome some of its limitations, be more consistent, produce better quality
   extensions and to make it harder to introduce bugs.
 
+- **Evolvability**: As nicely summarized in
+  [PEP-620](https://peps.python.org/pep-0620/) the standard Python/C API
+  exposes a lot of internal implementation details which makes it hard to
+  evolve the C API. HPy doesn't have this problem because all internal
+  implementation details are hidden.
+
 .. _PyPy: https://pypy.org
 .. _GraalPython:  https://www.graalvm.org/python
 
