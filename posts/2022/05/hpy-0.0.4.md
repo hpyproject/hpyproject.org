@@ -1,7 +1,7 @@
 <!--
 .. title: hpy 0.0.4: Third public release
 .. slug: hpy-0.0.4-third-public-release
-.. date: 2021-10-22 15:00:00 UTC
+.. date: 2022-05-25 15:00:00 UTC
 .. author: fangerer
 .. tags:
 .. category:
@@ -11,13 +11,16 @@
 -->
 
 HPy 0.0.4 is out! The third official HPy release comes with many new features
-and was again made available on PyPI (first time with binary wheels).
+and was again made available on PyPI.
 
-Besides new API functions, the major highlights of this release are Python 3.10
-support, better support for native fields (HPyField) and global variables
-(HPyGlobal), 
+Major highlights of the release are a bunch of new API functions (e.g.
+`HPyErr_ExceptionMatches`, `HPyErr_WarnEx`, `HPy_Contains`, and more),
+Python 3.10 support, better support for native fields (`HPyField`) and global
+variables (`HPyGlobal`), new debug mode features (detect invalid raw data
+pointer usage, detect invalid closing of argument handles, detect return of
+invalid handles).
 
-Great new also is that we are now able to provide two more non-trivial projects
+Great news too is that we are now able to provide two more non-trivial projects
 that have been (partially) migrated to HPy. This is,
 [Kiwisolver](https://github.com/hpyproject/kiwi-hpy/)
 and [Matplotlib](https://github.com/hpyproject/matplotlib-hpy/).
@@ -95,10 +98,10 @@ missing. We've added following API functions to the new release:
   - `HPyUnicode_ReadChar`
 
 For an overview of the current API, please refer to the public API declaration
-in [`public_api.h`](https://github.com/hpyproject/hpy/blob/release/0.0.4/hpy/tools/autogen/public_api.h#L107-L298),
+in [`public_api.h`](https://github.com/hpyproject/hpy/blob/0.0.4/hpy/tools/autogen/public_api.h#L116-L440),
 which is used to autogenerate parts of the HPy code and is a reliable list of
 all the supported functions. Also have a look at additional helpers in
-[`inline_helpers.h`](https://github.com/hpyproject/hpy/blob/release/0.0.4/hpy/devel/include/hpy/inline_helpers.h).
+[`inline_helpers.h`](https://github.com/hpyproject/hpy/blob/0.0.4/hpy/devel/include/hpy/inline_helpers.h).
 
 !!! Warning
 
@@ -109,6 +112,23 @@ Debug Mode
 ==========
 
 We again improved HPy's debug mode and added following new features:
+
+Enable Debug Mode via Environment Variable
+------------------------------------------
+
+The debug mode can now be enabled using environment variable `HPY_DEBUG`. It is
+possible to enable the debug mode for all HPy extensions or it is also possible
+to enable it just for certain extensions by enumerating them.
+
+Example:
+
+```shell
+$ # enable debug mode for all HPy extensions
+$ HPY_DEBUG=1 python3 my_application.py
+
+$ # enable debug mode just for ujson_hpy and piconumpy_hpy
+$ HPY_DEBUG=ujson_hpy,piconumpy_hpy python3 my_application.py
+```
 
 Detect Invalid Use of Raw Data Pointers
 ---------------------------------------
@@ -122,7 +142,8 @@ object. HPy doesn't expose the internal representation of the unicode object, so
 the Python implementation may use an arbitrary internal representation. This
 means that the UTF8 representation is just temporarily created for this API call
 and so the raw data must be released at some point. The contract here is that
-the raw data pointer is as long valid as the corresponding handle is valid.
+the raw data pointer is valid as long as the corresponding handle is valid.
+
 Example:
 
 ```c
@@ -155,8 +176,7 @@ static int bar(HPyContext *ctx)
 ```
 
 
-It
-is easy to forget about this resriction and if the raw data pointer is used
+Iu is easy to forget about this resriction and if the raw data pointer is used
 after the handle was closed, it may point to garbage. If the debug mode is
 enabled, it will make the underlying memory inaccessible and every access to the
 pointer will then cause a crash of the application. Unfortunately, not all
@@ -200,7 +220,7 @@ Examples
 ========
 
 Besides the known examples, this is HPy's 
-["proof of concept" package](https://github.com/hpyproject/hpy/tree/release/0.0.4/proof-of-concept), 
+["proof of concept" package](https://github.com/hpyproject/hpy/tree/0.0.4/proof-of-concept), 
 [`ultrajson-hpy`](https://github.com/hpyproject/ultrajson-hpy/tree/hpy-0.0.4),
 [`piconumpy`](https://github.com/hpyproject/piconumpy/tree/hpy-0.0.4), we are
 excited to present two new packages we have migrated to HPy:
@@ -216,4 +236,5 @@ excited to present two new packages we have migrated to HPy:
     finished but luckily, HPy provides the legacy compatibility API such that we
     can still call legacy C API functions from HPy.
 
-We will dedicate separate blog posts on the migration of those projects.
+We are still cleaning these ports up and will write another blog post about the
+ports and open them for discussion with the project owners.
