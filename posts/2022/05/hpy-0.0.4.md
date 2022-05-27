@@ -176,26 +176,25 @@ static int bar(HPyContext *ctx)
 ```
 
 
-Iu is easy to forget about this resriction and if the raw data pointer is used
+It is easy to forget about this resriction and if the raw data pointer is used
 after the handle was closed, it may point to garbage. If the debug mode is
 enabled, it will make the underlying memory inaccessible and every access to the
-pointer will then cause a crash of the application. Unfortunately, not all
-systems support that feature (since that needs OS support), we use a different
-strategy on other systems and fill the pointer with some marker bytes that make
-it easy to detect.
+pointer will then cause a crash of the application. This is currently only
+implemented for Linux systems. We use a different strategy on other systems and
+fill the pointer with some marker bytes that make it easy to detect.
 
 Detect Incorrect Closing of Argument Handles
 --------------------------------------------
 
 HPy functions that are called from Python receive handles that are owned by the
 caller. This means that those handles must not be closed by the callee but it
-is, of course, possible to call `HPy_Close` on them. For example:
+is, of course, possible to erroneously call `HPy_Close` on them. For example:
 
 ```c
 HPyDef_METH(foo, "foo", foo_impl, HPyFunc_O, .doc="closing argument")
 static HPy foo_impl(HPyContext *ctx, HPy self, HPy arg)
 {
-    // 'arg' is owned by the caller
+    // error: 'arg' is owned by the caller
     HPy_Close(ctx, arg);
     return HPy_Dup(ctx, ctx->h_None);
 }
