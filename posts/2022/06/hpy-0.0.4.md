@@ -1,7 +1,7 @@
 <!--
 .. title: hpy 0.0.4: Third public release
 .. slug: hpy-0.0.4-third-public-release
-.. date: 2022-05-25 15:00:00 UTC
+.. date: 2022-06-02 9:15:00 UTC
 .. author: fangerer
 .. tags:
 .. category:
