@@ -33,7 +33,7 @@ What is HPy?
 HPy provides a new API for extending Python in C. In other words, you use
 `#include <hpy.h>` instead of `#include <Python.h>`. For more info, look at
 the
-[official documentation](https://docs.hpyproject.org/en/release-0.0.4/overview.html).
+[official documentation](https://docs.hpyproject.org/en/0.0.4/overview.html).
 
 
 Installation
