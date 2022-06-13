@@ -17,7 +17,7 @@ HPy provides a new API for extending Python in C.  In other words, you use
 What are the advantages of HPy?
 ===============================
 
-- **Zero overhead** on CPython: extensions written in HPy runs at the same
+- **Zero overhead** on CPython: extensions written in HPy run at the same
   speed as "normal" extensions.
 
 - **Much faster** on alternative implementations such as PyPy_, GraalPython_.
@@ -46,9 +46,10 @@ What are the advantages of HPy?
 Current status
 ==============
 
-HPy is still in an early stage of development and there is no official release
-yet. We hope to make our first alpha release in the next months but we don't
-have any ETA.
+HPy is still in an early stage of development and there are only alpha preview
+releases so far, `0.0.4`__ being the most recent one.
+
+.. __: https://hpyproject.org/blog/posts/2022/06/hpy-0.0.4-third-public-release/
 
 The Python/C API is huge and at the moment only a small fraction of it is
 available in HPy. We are experimenting by porting existing extensions to HPy
