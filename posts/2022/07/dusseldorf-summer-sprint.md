@@ -15,7 +15,7 @@ I'm happy to announce that we will finally have another PyPy/HPy/other sprint
 in Dusseldorf, Germany from September 19-23, 2022.
 
 The sprint will be located at Heinrich Heine University Dusseldorf. Many
-thanks to Carl-Friedrich for organizing this.
+thanks to Carl Friedrich for organizing this.
 
 We will again follow an open format, i.e., everyone that is interesting in HPy,
 PyPy, or some related topic is welcome to join the sprint.
