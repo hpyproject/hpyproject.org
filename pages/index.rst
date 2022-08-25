@@ -26,7 +26,7 @@ What are the advantages of HPy?
   loaded unmodified on CPython, PyPy, GraalPython, etc.
 
 - **A migration path** for mixing legacy C-API calls with HPy API calls. Once
-  all the code is migrated, the extension can be compiled as a universal binary.
+  all the code is migrated, the extension can be compiled as a universal binary that works on any CPython version, PyPy, or GraalPy.
 
 - `Debug mode`_: in debug mode, you can easily identify common problems such
   as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
