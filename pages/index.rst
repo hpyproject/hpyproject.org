@@ -22,13 +22,14 @@ What are the advantages of HPy?
 
 - **Much faster** on alternative implementations such as PyPy_, GraalPython_.
 
-- **Universal binaries**: extensions built for the *HPy Universal ABI* can be
+- **Universal binaries**: extensions built for the `HPy Universal ABI`_ can be
   loaded unmodified on CPython, PyPy, GraalPython, etc.
 
 - **A migration path** for mixing legacy C-API calls with HPy API calls. Once
-  all the code is migrated, the extension can be compiled as a universal binary that works on any CPython version, PyPy, or GraalPy.
+  all the code is migrated, the extension can be compiled as a universal binary
+  that works on any CPython version, PyPy, or GraalPy.
 
-- `Debug mode`_: in debug mode, you can easily identify common problems such
+- **Debug mode**: in `debug mode`_, you can easily identify common problems such
   as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
   you ever forgot a ``Py_INCREF`` or ``Py_DECREF``? The HPy debug mode can be
   activated at runtime to detect these mistakes for you on universal binaries.
@@ -45,7 +46,8 @@ What are the advantages of HPy?
 
 .. _PyPy: https://pypy.org
 .. _GraalPython:  https://www.graalvm.org/python
-.. _`Debug mode`: https://docs.hpyproject.org/en/latest/debug-mode.html
+.. _`debug mode`: https://docs.hpyproject.org/en/latest/debug-mode.html
+.. _`HPy Universal ABI`: https://docs.hpyproject.org/en/latest/overview.html#target-abis
 
 Current status and where we need help
 =====================================
