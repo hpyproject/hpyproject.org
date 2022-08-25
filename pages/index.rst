@@ -31,7 +31,7 @@ What are the advantages of HPy?
 - `Debug mode`_: in debug mode, you can easily identify common problems such
   as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
   you ever forgot a ``Py_INCREF`` or ``Py_DECREF``? The HPy debug mode can be
-  activated at runtme to detect these mistakes for you on universal binaries.
+  activated at runtime to detect these mistakes for you on universal binaries.
 
 - **Nicer API**: the standard Python/C API shows its age. HPy is designed to
   overcome some of its limitations, be more consistent, produce better quality
