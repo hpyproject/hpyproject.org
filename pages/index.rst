@@ -22,13 +22,16 @@ What are the advantages of HPy?
 
 - **Much faster** on alternative implementations such as PyPy_, GraalPython_.
 
-- **Debug Mode**: in debug mode, you can easily identify common problems such
-  as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
-  you ever forgot a ``Py_INCREF`` or ``Py_DECREF``? The HPy debug mode will
-  detect these mistakes for you.
-
 - **Universal binaries**: extensions built for the *HPy Universal ABI* can be
   loaded unmodified on CPython, PyPy, GraalPython, etc.
+
+- **A migration path** for mixing legacy C-API calls with HPy API calls. Once
+  all the code is migrated, the extension can be compiled as a universal binary.
+
+- `Debug mode`_: in debug mode, you can easily identify common problems such
+  as memory leaks, invalid lifetime of objects, invalid usage of APIs. Have
+  you ever forgot a ``Py_INCREF`` or ``Py_DECREF``? The HPy debug mode can be
+  activated at runtme to detect these mistakes for you on universal binaries.
 
 - **Nicer API**: the standard Python/C API shows its age. HPy is designed to
   overcome some of its limitations, be more consistent, produce better quality
@@ -42,20 +45,37 @@ What are the advantages of HPy?
 
 .. _PyPy: https://pypy.org
 .. _GraalPython:  https://www.graalvm.org/python
+.. _`Debug mode`_: https://docs.hpyproject.org/en/latest/debug-mode.html
 
-Current status
-==============
+Current status and where we need help
+=====================================
 
-HPy is still in an early stage of development and there are only alpha preview
-releases so far, `0.0.4`__ being the most recent one.
+HPy is in development. `0.0.4`__ is the latest alpha release.
 
 .. __: https://hpyproject.org/blog/posts/2022/06/hpy-0.0.4-third-public-release/
 
-The Python/C API is huge and at the moment the most popular functions are
-available. We are experimenting by porting existing extensions to HPy
-and adding/designing new functionalities on a per-need basis.
-
 We welcome your design input or adventurous alpha testing.
+
+The Python/C API is huge. At the moment many popular functions are
+available.  Is something missing for the port of your favorite extension?
+Please open an issue or even better a PR.
+
+Documentation could use improvement. Who better to suggest and implement
+improvements than new users? The reference documentation lives together with
+the code. We could also use help repurposing notes from the design discussions
+and creating clearer documentation. If this non-coding work is something you
+can do, let us know.
+
+Tooling and packaging are no less difficult than managing low-level APIs. We
+could use help driving discussion and implementing:
+- How to package a universal extension and how to put it on PyPI?
+
+- How best to package HPy itself
+
+- How does HPy integrate with setuptools, mesonpy, or other build systems
+
+- Upstreaming completed forks of the packages listed below, or upstreaming
+  parts of the forks so the code does not suffer from bit-rot
 
 HPy-compatible extensions
 =========================
@@ -104,7 +124,7 @@ design. `PRs are welcome ;) <https://github.com/hpyproject/hpyproject.org/>`_
 More info
 =========
 
-- `Official docs`_
+- `Documentation`_
 
 - `HPy blog`_
 
