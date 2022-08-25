@@ -45,7 +45,7 @@ What are the advantages of HPy?
 
 .. _PyPy: https://pypy.org
 .. _GraalPython:  https://www.graalvm.org/python
-.. _`Debug mode`_: https://docs.hpyproject.org/en/latest/debug-mode.html
+.. _`Debug mode`: https://docs.hpyproject.org/en/latest/debug-mode.html
 
 Current status and where we need help
 =====================================
@@ -111,6 +111,7 @@ performance with GraalVM Python for the kiwi-solver complete HPy port.
 .. _piconumpy: https://github.com/hpyproject/piconumpy
 .. _numpy: https://github.com/hpyproject/numpy-hpy/tree/graal-team/hpy#readme
 .. _matplotlib: https://github.com/hpyproject/matplotlib-hpy/
+.. _`kiwi-solver`: https://github.com/hpyproject/kiwi-hpy/
 .. _`GraalVM blog post`: https://medium.com/graalvm/porting-matplotlib-from-c-api-to-hpy-aa32faa1f0b5
 
 This website and the logo are ugly
@@ -130,16 +131,16 @@ More info
 
 - `Github repository`_
 
-- #hpy IRC channel on the `Libera.Chat`_ server: `irc.libera.chat/hpy <irc://irc.libera.chat/hpy>`_
+- #hpy `IRC channel <irc://irc.libera.chat/hpy>`_
+
+- `Mailing list`_
 
 - HPy is pronounced `/h/ - pie` (or using IPA notation: `/eɪtʃ-paɪ/`)
 
-.. _`Official docs`: https://hpy.readthedocs.io/en/latest/
+.. _documentation: https://hpy.readthedocs.io/en/latest/
 .. _`HPy blog`: blog/
 .. _`Github repository`: https://github.com/hpyproject/hpy/
-.. _`Mailing list`: https://mail.python.org/mailman3/lists/hpy-dev.python.org/
-.. _`but it is no longer the case`: /blog/posts/2021/05/hpy-irc-moves-to-libera-chat/
-.. _`Libera.Chat`: https://libera.chat/
+.. _`Mailing list`: https://mail.python.org/archives/list/hpy-dev@python.org/latest
 
 Recent blog posts
 ==================
