@@ -51,8 +51,8 @@ releases so far, `0.0.4`__ being the most recent one.
 
 .. __: https://hpyproject.org/blog/posts/2022/06/hpy-0.0.4-third-public-release/
 
-The Python/C API is huge and at the moment only a small fraction of it is
-available in HPy. We are experimenting by porting existing extensions to HPy
+The Python/C API is huge and at the moment the most popular functions are
+available. We are experimenting by porting existing extensions to HPy
 and adding/designing new functionalities on a per-need basis.
 
 We welcome your design input or adventurous alpha testing.
@@ -70,13 +70,28 @@ The extensions that we are experimenting with include:
   defines a custom type (similar to ``ndarray`` but with many fewer features of
   course).
 
-- numpy-hpy_: one of our ambitious goals is to port numpy to HPy, and to use this
-  experience to better understand how to design the API. This is still at a
-  **very** early stage though.
+- numpy_: one of our ambitious goals is to port numpy to HPy, and to use this
+  experience to better understand how to design the API. This builds but does
+  not pass the test suite.
+
+- matplotlib_: Since Matplotlib also has a dependency to NumPy, the migration
+  to universal mode is not fully finished. HPy provides the legacy compatibility API
+  such that we can still call legacy C API functions from HPy and successfully
+  run the test suite.
+
+- kiwi-solver_: A dependency of Matplotlib, it has been fully ported to
+  universal mode.
+
+Benchmarks and more information about the Matplotlib and kiwi-solver ports can
+be found in the `GraalVM blog post`_. The benchmarks show that the HPy ports
+have little impact on CPython performance, while enabling close-to-cpython
+performance with GraalVM Python for the kiwi-solver complete HPy port.
 
 .. _ultrajson-hpy: https://github.com/hpyproject/ultrajson-hpy
 .. _piconumpy: https://github.com/hpyproject/piconumpy
-.. _numpy-hpy: https://github.com/hpyproject/numpy-hpy/
+.. _numpy: https://github.com/hpyproject/numpy-hpy/tree/graal-team/hpy#readme
+.. _matplotlib: https://github.com/hpyproject/matplotlib-hpy/
+.. _`GraalVM blog post`: https://medium.com/graalvm/porting-matplotlib-from-c-api-to-hpy-aa32faa1f0b5
 
 This website and the logo are ugly
 ===================================
@@ -96,9 +111,6 @@ More info
 - `Github repository`_
 
 - #hpy IRC channel on the `Libera.Chat`_ server: `irc.libera.chat/hpy <irc://irc.libera.chat/hpy>`_
-
-  * **NOTE**: the official #hpy channel used to be on Freenode, `but it is no
-    longer the case`_
 
 - HPy is pronounced `/h/ - pie` (or using IPA notation: `/eɪtʃ-paɪ/`)
 
