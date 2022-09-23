@@ -18,10 +18,13 @@ Yesterday, we did the HPy sprint report. Most notably, we also had several
 CPython core developers in the call.
 
 The sprint report was streamed on
-[Twitch](https://www.twitch.tv/pypyproject) and the recording is still
-available.
+[Twitch](https://www.twitch.tv/pypyproject) and the recording is available here:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kl5w8uR6hGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!--TEASER_END-->
+
+
+## HPy Sprint Call with CPython Core Developers
 
 One of the main goals in the sprint was to write a PEP to officially propose
 HPy as an Python C extension API. We started to do so but before we actually
