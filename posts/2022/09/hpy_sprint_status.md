@@ -42,3 +42,43 @@ continue discussions there and gather more feedback.
 
 We thank the Python core developers for participating in the call and for the
 offered support.
+
+
+## Call with NumPy Core Developer Sebastian Berg
+
+Since we are working on the migration of NumPy to HPy, we had a call with
+Sebastian Berg on Tuesday (September 20th, 2022).
+
+We discussed some problems we discovered during our migration work and were
+discussing how to solve it.
+
+These were the main discussion points:
+
+* NumPy's structured data type allows to have objects in NumPy arrays which
+  problematic for HPy. This is mainly because doesn't allow to use the API
+  during deallocation of an object. Hence, there is no way to determine the
+  location of those objects by fetching the data type (which requires an API
+  call). We discussed to mirror the structure in pure C-level data structures
+  instead.
+
+* HPy requires to migration all static types to heap types and we discovered
+  that static type behave a bit differently compared to heap types in the case
+  of multiple inheritance. We discussed if that is a bug that CPython needs
+  to solve or if that is something that NumPy should change. So far, it looks
+  rather to be a CPython problem since heap types are pretty new.
+
+* We further discussed how to handle NumPy's C API when migrating to HPy. We
+  agreed that we will probably need to provide a separate NumPy HPy C API as
+  well which will maybe removed at some point in future.
+
+
+## Main Technical Achievements of the Sprint
+
+* We have added support for stack traces when running in the debug mode on Mac
+  OS X (https://github.com/hpyproject/hpy/pull/346).
+
+* We are up to finish our incremental porting example
+  (https://github.com/hpyproject/hpy/pull/246/files)
+
+* HPy does now also correctly support object members in HPy types
+  (https://github.com/hpyproject/hpy/pull/347).
