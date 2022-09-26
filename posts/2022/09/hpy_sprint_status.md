@@ -76,10 +76,10 @@ These were the main discussion points:
 ## Main Technical Achievements of the Sprint
 
 * We have added support for stack traces when running in the debug mode on Mac
-  OS X (https://github.com/hpyproject/hpy/pull/346).
+  OS X ([PR 346](https://github.com/hpyproject/hpy/pull/346)).
 
 * We are up to finish our incremental porting example
-  (https://github.com/hpyproject/hpy/pull/246/files)
+  ([PR 246](https://github.com/hpyproject/hpy/pull/246/files))
 
 * HPy does now also correctly support object members in HPy types
-  (https://github.com/hpyproject/hpy/pull/347).
+  ([PR 347](https://github.com/hpyproject/hpy/pull/347)).
