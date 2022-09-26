@@ -12,7 +12,7 @@
 
 As we announced in
 [this blog post](https://hpyproject.org/blog/posts/2022/07/dusseldorf-sprint-2022/),
-we are currently having our joint PyPy/HPy/GraalPy sprint in Dusseldorf.
+we are currently having our joint PyPy/HPy/GraalPy sprint in Düsseldorf.
 
 On Thursday (September 22nd, 2022), we did the HPy sprint report. Most notably,
 we also had several CPython core developers in the call.
