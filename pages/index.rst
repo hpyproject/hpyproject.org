@@ -39,7 +39,7 @@ What are the advantages of HPy?
   extensions and to make it harder to introduce bugs.
 
 - **Evolvability**: As nicely summarized in
-  [PEP-620](https://peps.python.org/pep-0620/) the standard Python/C API
+  `PEP 620`_ the standard Python/C API
   exposes a lot of internal implementation details which makes it hard to
   evolve the C API. HPy doesn't have this problem because all internal
   implementation details are hidden.
@@ -48,6 +48,7 @@ What are the advantages of HPy?
 .. _GraalPython:  https://www.graalvm.org/python
 .. _`debug mode`: https://docs.hpyproject.org/en/latest/debug-mode.html
 .. _`HPy Universal ABI`: https://docs.hpyproject.org/en/latest/overview.html#target-abis
+.. _`PEP 620`: https://peps.python.org/pep-0620/
 
 Current status and where we need help
 =====================================
