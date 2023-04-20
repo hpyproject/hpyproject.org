@@ -1,6 +1,6 @@
 .. title: HPy - A better C API for Python
 .. slug: index
-.. date: 2021-03-21 16:14:02 UTC
+.. date: 2023-04-20 10:10:00 UTC
 .. tags: 
 .. category: 
 .. link: 
@@ -20,7 +20,7 @@ What are the advantages of HPy?
 - **Zero overhead** on CPython: extensions written in HPy run at the same
   speed as "normal" extensions.
 
-- **Much faster** on alternative implementations such as PyPy_, GraalPython_.
+- **Much faster** on alternative implementations such as PyPy_, GraalPy_.
 
 - **Universal binaries**: extensions built for the `HPy Universal ABI`_ can be
   loaded unmodified on CPython, PyPy, GraalPython, etc.
@@ -45,44 +45,33 @@ What are the advantages of HPy?
   implementation details are hidden.
 
 .. _PyPy: https://pypy.org
-.. _GraalPython:  https://www.graalvm.org/python
+.. _GraalPy:  https://www.graalvm.org/python
 .. _`debug mode`: https://docs.hpyproject.org/en/latest/debug-mode.html
 .. _`HPy Universal ABI`: https://docs.hpyproject.org/en/latest/overview.html#target-abis
 .. _`PEP 620`: https://peps.python.org/pep-0620/
 
-Current status and where we need help
-=====================================
+Current status
+==============
 
-HPy is in development. `0.0.4`__ is the latest alpha release.
+HPy is under active development. `0.0.4`__ is the latest alpha release but we
+will soon leave the _alpha_ state and working hard towards a stable release.
 
 .. __: https://hpyproject.org/blog/posts/2022/06/hpy-0.0.4-third-public-release/
 
-We welcome your design input or adventurous alpha testing.
+In the last year, we invested a lot of effort in adding more APIs by migration
+important packages (in particular, checkout our numpy_ port). We also improved
+our documentation a lot (in particular the `API reference`_).
+
+We are, of course, always open for design discussions and new reqiurements.
 
 The Python/C API is huge. At the moment many popular functions are
-available.  Is something missing for the port of your favorite extension?
+available. Is something missing for the port of your favorite extension?
 Please open an issue or even better a PR.
 
-Documentation could use improvement. Who better to suggest and implement
-improvements than new users? The reference documentation lives together with
-the code. We could also use help repurposing notes from the design discussions
-and creating clearer documentation. If this non-coding work is something you
-can do, let us know.
-
-Tooling and packaging are no less difficult than managing low-level APIs. We
-could use help driving discussion and implementing:
-
-- How to package a universal extension and how to put it on PyPI?
-
-- How best to package HPy itself
-
-- How does HPy integrate with setuptools, mesonpy, or other build systems
-
-- Upstreaming completed forks of the packages listed below, or upstreaming
-  parts of the forks so the code does not suffer from bit-rot
+.. _`API reference`: https://docs.hpyproject.org/en/latest/api-reference/index.html
 
 HPy-compatible extensions
-=========================
+-------------------------
 
 The extensions that we are experimenting with include:
 
@@ -95,8 +84,8 @@ The extensions that we are experimenting with include:
   course).
 
 - numpy_: one of our ambitious goals is to port numpy to HPy, and to use this
-  experience to better understand how to design the API. This builds but does
-  not pass the test suite.
+  experience to better understand how to design the API. This port are close to
+  pass the test suite.
 
 - matplotlib_: Since Matplotlib also has a dependency to NumPy, the migration
   to universal mode is not fully finished. HPy provides the legacy compatibility API
@@ -118,12 +107,39 @@ performance with GraalVM Python for the kiwi-solver complete HPy port.
 .. _`kiwi-solver`: https://github.com/hpyproject/kiwi-hpy/
 .. _`GraalVM blog post`: https://medium.com/graalvm/porting-matplotlib-from-c-api-to-hpy-aa32faa1f0b5
 
-This website and the logo are ugly
-===================================
+Where we need help
+==================
 
-We know: we have expertise in Virtual Machines, Compilers, low-level
-programming, etc, but zero expertise in web development or graphic
-design. `PRs are welcome ;) <https://github.com/hpyproject/hpyproject.org/>`_
+* **Documentation:** Our resources are very limied and we therefore concentrate
+  on technical tasks. We already wrote a significant amount of documentation
+  (see `Documentation`_) but it is not complete yet. If this non-coding work is
+  something you can do, let us know.
+
+* **Publicity:** HPy is already well received among core developers of some
+  important projects. For instance, we are actively talking to Python, NumPy,
+  and Cython core developers. However, we need to get more package developers to
+  be interested in and even use HPy. We appreciate any help for advertising HPy
+  and we are also happy to help preparing talks, demos, etc.
+
+* **Tooling:** This is  also a topic we would need help. We are, for example,
+  thinking of migration helper tools that do all the boilerplate work that can
+  be automated when migrating a package from C API to HPy API.
+
+* **Packaging:** There are several open questions we need to discuss and answer.
+
+  * How to package a universal extension and how to put it on PyPI?
+
+  * How best to package HPy itself
+
+  * How does HPy integrate with setuptools, mesonpy, or other build systems
+
+  * Upstreaming completed forks of the packages listed below, or upstreaming
+    parts of the forks so the code does not suffer from bit-rot
+
+* **Website and logo design:** You don't like this website and the HPy logo?
+  Well, we have expertise in virtual machines, compilers, low-level programming,
+  etc, but zero expertise in web development or graphic design. `PRs are welcome
+  ;) <https://github.com/hpyproject/hpyproject.org/>`_
 
 
 More info
@@ -135,7 +151,9 @@ More info
 
 - `Github repository`_
 
-- #hpy `IRC channel <irc://irc.libera.chat/hpy>`_
+- `HPy Discord server <https://discord.gg/xSzxUbPkTQ>`_
+
+- #hpy `IRC channel <irc://irc.libera.chat/hpy>`_ (obsolete but still there)
 
 - `Mailing list`_
 
