@@ -54,13 +54,15 @@ Current status
 ==============
 
 HPy is under active development. `0.0.4`__ is the latest alpha release but we
-will soon leave the _alpha_ state and working hard towards a stable release.
+will soon leave the _alpha_ state and are working hard towards a stable release.
 
 .. __: https://hpyproject.org/blog/posts/2022/06/hpy-0.0.4-third-public-release/
 
-In the last year, we invested a lot of effort in adding more APIs by migration
-important packages (in particular, checkout our numpy_ port). We also improved
-our documentation a lot (in particular the `API reference`_).
+We feel that the HPy ABI is stable enough now that we can fulfill our backwards
+and forwards binary compatibility promises with the upcoming release, and that
+the API now covers enough use cases to migrate important packages (in
+particular, checkout our numpy_ port). We also provide porting guides and
+extensive documentation (in particular the `API reference`_).
 
 We are, of course, always open for design discussions and new reqiurements.
 
@@ -84,8 +86,8 @@ The extensions that we are experimenting with include:
   course).
 
 - numpy_: one of our ambitious goals is to port numpy to HPy, and to use this
-  experience to better understand how to design the API. This port are close to
-  pass the test suite.
+  experience to better understand how to design the API. This port is close to
+  passing the test suite.
 
 - matplotlib_: Since Matplotlib also has a dependency to NumPy, the migration
   to universal mode is not fully finished. HPy provides the legacy compatibility API
@@ -110,7 +112,7 @@ performance with GraalVM Python for the kiwi-solver complete HPy port.
 Where we need help
 ==================
 
-* **Documentation:** Our resources are very limied and we therefore concentrate
+* **Documentation:** Our resources are very limited and we therefore concentrate
   on technical tasks. We already wrote a significant amount of documentation
   (see `Documentation`_) but it is not complete yet. If this non-coding work is
   something you can do, let us know.
@@ -121,7 +123,7 @@ Where we need help
   be interested in and even use HPy. We appreciate any help for advertising HPy
   and we are also happy to help preparing talks, demos, etc.
 
-* **Tooling:** This is  also a topic we would need help. We are, for example,
+* **Tooling:** This is also a topic we would need help. We are, for example,
   thinking of migration helper tools that do all the boilerplate work that can
   be automated when migrating a package from C API to HPy API.
 
