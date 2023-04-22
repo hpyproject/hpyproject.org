@@ -1234,7 +1234,6 @@ SEARCH_FORM = """
     <div class="form-group">
         <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search&hellip;" autocomplete="off">
     </div>
-    <input type="submit" value="Local Search" style="visibility: hidden;">
 </form>
 """
 
