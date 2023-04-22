@@ -18,25 +18,25 @@
     <!-- Adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar -->
     <section class="navigation">
         <div class="nav-container">
+            <div class="brand">
+                <a href="/index.html">
+                    <image id="toplogo" src="/images/hpy-logo.svg" width=75px; alt=HPy/>
+                </a>
+            </div>
             <div class="nav-container-1">
-                <div class="brand">
-                    <a href="/index.html">
-                        <image id="toplogo" src="/images/hpy-logo.svg" width=75px; alt=HPy/>
-                    </a>
-                </div>
                 {% if search_form %}
                     <div class="searchform" role="search">
                         {{ search_form }}
                     </div>
                 {% endif %}
-            </div>
-            <nav>
-                <ul class="nav-list">
-                    {{ html_navigation_links_entries(navigation_links) }}
-                </ul>
-            </nav>
-            <div class="nav-mobile">
-                <a id="nav-toggle" href="#!"> <span></span></a>
+                <nav>
+                    <ul class="nav-list">
+                        {{ html_navigation_links_entries(navigation_links) }}
+                    </ul>
+                </nav>
+                <div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"> <span></span></a>
+                </div>
             </div>
         </div>
     </section>
