@@ -13,8 +13,8 @@
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
+    {{ header.html_header() }}
     <div id="container">
-         {{ header.html_header() }}
          <main id="content">
             {% block content %}{% endblock %}
          </main>
