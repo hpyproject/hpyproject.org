@@ -166,6 +166,7 @@ div.sidebar {
   padding: 6px;
   border: none;
   font-size: 17px;
+  border-radius: 10px;
 }
 
 .brand {
