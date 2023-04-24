@@ -162,6 +162,13 @@ div.sidebar {
   background: var(--nav-background);
 }
 
+.searchform input[type=text] {
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
 .brand {
   padding-left: 20px;
   text-transform: uppercase;
