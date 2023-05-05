@@ -11,7 +11,7 @@
 -->
 
 Following the example of many other FOSS projects, the HPy team has
-decided to move its official ``#hpy`` IRC channel from Freenode to
+decided to move its official `#hpy` IRC channel from Freenode to
 [Libera.Chat](https://libera.chat/): [irc.libera.chat/hpy](irc://irc.libera.chat/hpy)
 
 The core devs will no longer be present on the Freenode channel, so we recommend to

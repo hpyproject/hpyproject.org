@@ -18,17 +18,14 @@ features, and Windows support.
 
 <!--TEASER_END-->
 
-What is HPy?
-============
+# What is HPy?
 
 HPy provides a new API for extending Python in C. In other words, you use
 `#include <hpy.h>` instead of `#include <Python.h>`. For more info, look at
 the
 [official documentation](https://docs.hpyproject.org/en/latest/overview.html).
 
-
-Installation
-============
+# Installation
 
 HPy 0.0.3 is best tested on Linux systems but there is also initial support for
 Windows (both `x86_64`).
@@ -43,10 +40,9 @@ $ pip install hpy==0.0.3
     Currently, we provide only the `sdist` (i.e., the `.tar.gz`, no binary
     wheels). But we plan to ship binary wheels starting with the next release.
 
-
 [PyPy](https://pypy.org) and [GraalPython](https://graalvm.org/python/) already
 come with intrinsic HPy support, so no installation is necessary. HPy 0.0.3 is
-included in the current releases of both, i.e. PyPy 7.3.6 (released on 
+included in the current releases of both, i.e. PyPy 7.3.6 (released on
 2021-10-17) and GraalPython 21.3.0 (released on 2021-10-19).
 
 To double check the version of HPy which is shipped with those, you can either
@@ -70,20 +66,19 @@ $ graalpython -c 'import hpy.universal; print(hpy.universal.get_version()[0])'
 0.0.3
 ```
 
-API
-===
+# API
 
 HPy is still under heavy development and does not yet provide as many API
 functions as Python's C API, but more and more pieces are being added.
 In this release, we've added following functions:
 
-  - `HPy_Is`
-  - `HPyBytes_FromStringAndSize`
-  - `HPyErr_NewException`
-  - `HPyErr_NewExceptionWithDoc`
-  - `HPyUnicode_AsUTF8AndSize`
-  - `HPyUnicode_DecodeFSDefault`
-  - `HPyImport_ImportModule`
+- `HPy_Is`
+- `HPyBytes_FromStringAndSize`
+- `HPyErr_NewException`
+- `HPyErr_NewExceptionWithDoc`
+- `HPyUnicode_AsUTF8AndSize`
+- `HPyUnicode_DecodeFSDefault`
+- `HPyImport_ImportModule`
 
 All of the above functions except of `HPy_Is` have equivalents in the C API. You
 just need to remove the leading `H` from the name.
@@ -129,8 +124,7 @@ all the supported functions.
     The HPy API is still considered in alpha status and it's subject to change
     between versions.
 
-Debug Mode
-===
+# Debug Mode
 
 One of the great features of HPy is the _debug mode_. It was already introduced
 a while ago (and therefore already included in release 0.0.2) but it got a new
@@ -140,19 +134,18 @@ closed handles will cause a fatal error. This is because it's possible that
 another object is associated with the closed handle. Then the program would just
 operate on the wrong object. The new feature is able to prevent that.
 
-Examples
-========
+# Examples
 
 The best way to get a glimpse of how to use HPy is to look at examples:
 
-  - the HPy repository contains a
-    ["proof of concept" package](https://github.com/hpyproject/hpy/tree/release/0.0.3/proof-of-concept). 
-    Make sure to checkout the branch `release/0.0.3`.
+- the HPy repository contains a
+  ["proof of concept" package](https://github.com/hpyproject/hpy/tree/release/0.0.3/proof-of-concept).
+  Make sure to checkout the branch `release/0.0.3`.
 
-  - [`ultrajson-hpy`](https://github.com/hpyproject/ultrajson-hpy/tree/hpy-0.0.3)
-    is a port of the popular `ultrajson` package. Make sure to checkout the
-    `hpy-0.0.3` branch.
+- [`ultrajson-hpy`](https://github.com/hpyproject/ultrajson-hpy/tree/hpy-0.0.3)
+  is a port of the popular `ultrajson` package. Make sure to checkout the
+  `hpy-0.0.3` branch.
 
-  - [`piconumpy`](https://github.com/hpyproject/piconumpy/tree/hpy-0.0.3)
-    contains a very tiny implementation of an `array`-like class. Make sure to
-    checkout the `hpy-0.0.3` branch.
+- [`piconumpy`](https://github.com/hpyproject/piconumpy/tree/hpy-0.0.3)
+  contains a very tiny implementation of an `array`-like class. Make sure to
+  checkout the `hpy-0.0.3` branch.
