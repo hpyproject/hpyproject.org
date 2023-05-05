@@ -31,7 +31,7 @@ BLOG_DESCRIPTION = "A better C API for Python"  # (translatable)
 #
 # Currently supported languages are:
 #
-_SUPPORTED_LANGUAGES = ['en']
+_SUPPORTED_LANGUAGES = ["en"]
 #
 # If you want to use Nikola with a non-supported language you have to provide
 # a module containing the necessary translations
@@ -59,7 +59,7 @@ TRANSLATIONS = {
 # this pattern is also used for metadata:
 #     something.meta -> something.pl.meta
 
-TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
+TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 # Links for the sidebar / navigation bar.  (translatable)
 # This is a dict.  The keys are languages, and values are tuples.
@@ -88,15 +88,15 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('https://hpy.readthedocs.io/', 'Dev Docs'),
+        ("https://hpy.readthedocs.io/", "Dev Docs"),
         (
-          (
-            ('/blog', 'Index'),
-            ('/categories', 'Tags'),
-            ('/archive.html', 'Archive by year'),
-            ('/rss.xml', 'RSS feed'),
-          ),
-          'Blog',
+            (
+                ("/blog", "Index"),
+                ("/categories", "Tags"),
+                ("/archive.html", "Archive by year"),
+                ("/rss.xml", "RSS feed"),
+            ),
+            "Blog",
         ),
     ),
 }
@@ -105,9 +105,7 @@ NAVIGATION_LINKS = {
 # although themes may not always support them. (translatable)
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
 # Not supported in the HPy theme
-NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: ()
-}
+NAVIGATION_ALT_LINKS = {DEFAULT_LANG: ()}
 
 # Name of the theme to use.
 THEME = "hpy"
@@ -115,7 +113,7 @@ THEME = "hpy"
 # A theme color. In default themes, it might be displayed by some browsers as
 # the browser UI color (eg. Chrome on Android). Other themes might also use it
 # as an accent color (the default ones don’t). Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = "#5670d4"
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Samples for bootblog4 (enabled) and bootstrap4 (commented) follow.
@@ -128,18 +126,18 @@ THEME_COLOR = '#5670d4'
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
-        'featured_large': False,
+        "featured_large": False,
         # Show the first (remaining) two featured posts in small boxes.
-        'featured_small': False,
+        "featured_small": False,
         # Show featured posts on mobile.
-        'featured_on_mobile': True,
+        "featured_on_mobile": True,
         # Show image in `featured_large` on mobile.
         # `featured_small` displays them only on desktop.
-        'featured_large_image_on_mobile': True,
+        "featured_large_image_on_mobile": True,
         # Strip HTML from featured post text.
-        'featured_strip_html': False,
+        "featured_strip_html": False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
+        "sidebar": "",
     }
 }
 # Config for bootstrap4:
@@ -247,9 +245,7 @@ TIMEZONE = "UTC"
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of {source: relative destination}.
 # Default is:
-FILES_FOLDERS = {
-    'files': ''
-}
+FILES_FOLDERS = {"files": ""}
 # Which means copy 'files' into 'output'
 
 # One or more folders containing code listings to be processed and published on
@@ -268,18 +264,18 @@ FILES_FOLDERS = {
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ('.rst', '.txt'),
-    "markdown": ('.md', '.mdown', '.markdown'),
-    "textile": ('.textile',),
-    "txt2tags": ('.t2t',),
-    "bbcode": ('.bb',),
-    "wiki": ('.wiki',),
-    "ipynb": ('.ipynb',),
-    "html": ('.html', '.htm'),
+    "rest": (".rst", ".txt"),
+    "markdown": (".md", ".mdown", ".markdown"),
+    "textile": (".textile",),
+    "txt2tags": (".t2t",),
+    "bbcode": (".bb",),
+    "wiki": (".wiki",),
+    "ipynb": (".ipynb",),
+    "html": (".html", ".htm"),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ('.php',),
+    "php": (".php",),
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
@@ -311,7 +307,7 @@ NEW_POST_DATE_PATH = True
 # What format to use when creating posts with date paths?
 # Default is '%Y/%m/%d', other possibilities include '%Y' or '%Y/%m'.
 # NEW_POST_DATE_PATH_FORMAT = '%Y/%m/%d'
-NEW_POST_DATE_PATH_FORMAT = '%Y/%m'
+NEW_POST_DATE_PATH_FORMAT = "%Y/%m"
 
 # If this is set to True, the DEFAULT_LANG version will be displayed for
 # untranslated posts.
@@ -380,7 +376,7 @@ SHOW_BLOG_TITLE = False
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page and posts.
 # Tag pages will still be generated.
-HIDDEN_TAGS = ['mathjax']
+HIDDEN_TAGS = ["mathjax"]
 
 # Only include tags on the tag list/overview page if there are at least
 # TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
@@ -525,7 +521,7 @@ HIDDEN_CATEGORIES = []
 # If you do not want to display an author publicly, you can mark it as hidden.
 # The author will not be displayed on the author list page and posts.
 # Tag pages will still be generated.
-HIDDEN_AUTHORS = ['Guest']
+HIDDEN_AUTHORS = ["Guest"]
 
 # Allow multiple, comma-separated authors for a post? (Requires theme support, present in built-in themes)
 # MULTIPLE_AUTHORS_PER_POST = False
@@ -537,9 +533,7 @@ INDEX_PATH = "blog"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
-FRONT_INDEX_HEADER = {
-    DEFAULT_LANG: ''
-}
+FRONT_INDEX_HEADER = {DEFAULT_LANG: ""}
 
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
@@ -633,11 +627,11 @@ REDIRECTIONS = []
 # For more details, read the manual:
 # https://getnikola.com/handbook.html#deploying-to-github
 # You will need to configure the deployment branch on GitHub.
-GITHUB_SOURCE_BRANCH = 'src'
-GITHUB_DEPLOY_BRANCH = 'main'
+GITHUB_SOURCE_BRANCH = "src"
+GITHUB_DEPLOY_BRANCH = "main"
 
 # The name of the remote where you wish to push to, using github_deploy.
-GITHUB_REMOTE_NAME = 'origin'
+GITHUB_REMOTE_NAME = "origin"
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
@@ -647,7 +641,7 @@ GITHUB_COMMIT_SOURCE = True
 # If you don't use an absolute path, it will be considered as relative
 # to the location of conf.py
 # OUTPUT_FOLDER = 'output'
-OUTPUT_FOLDER = 'public'
+OUTPUT_FOLDER = "public"
 
 # where the "cache" of partial generated content should be located
 # default: 'cache'
@@ -812,7 +806,7 @@ GALLERIES_DEFAULT_THUMBNAIL = None
 # (the thumbnail has ``.thumbnail`` added before the file extension by default,
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
 
-IMAGE_FOLDERS = {'images': 'images'}
+IMAGE_FOLDERS = {"images": "images"}
 # IMAGE_THUMBNAIL_SIZE = 400
 # IMAGE_THUMBNAIL_FORMAT = '{name}.thumbnail{ext}'
 
@@ -888,8 +882,8 @@ IMAGE_FOLDERS = {'images': 'images'}
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
 FAVICONS = (
-     ("icon", "/favicon2.ico", "16x16"),
-     ("icon", "/favicon32x32.ico", "32x32"),
+    ("icon", "/favicon2.ico", "16x16"),
+    ("icon", "/favicon32x32.ico", "32x32"),
 )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
@@ -971,22 +965,22 @@ CONTENT_FOOTER_FORMATS = {
             "email": BLOG_EMAIL,
             "author": BLOG_AUTHOR,
             "date": time.gmtime().tm_year,
-            "license": LICENSE
-        }
+            "license": LICENSE,
+        },
     )
 }
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
 RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
-RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
+RSS_COPYRIGHT_PLAIN = "Contents © {date} {author} {license}"
 RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
 # systems.  The following comment systems are supported by Nikola:
 # disqus, facebook, intesedebate, isso, muut, commento, utterances
 # You can leave this option blank to disable comments.
-COMMENT_SYSTEM = 'utterances'
+COMMENT_SYSTEM = "utterances"
 # And you also need to add your COMMENT_SYSTEM_ID which
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
@@ -1094,7 +1088,12 @@ FUTURE_IS_NOW = True
 #       with the MarkdownExtension class and should not be added here.
 # Defaults are markdown.extensions.(fenced_code|codehilite|extra)
 # markdown.extensions.meta is required for Markdown metadata.
-MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra', 'admonition']
+MARKDOWN_EXTENSIONS = [
+    "markdown.extensions.fenced_code",
+    "markdown.extensions.codehilite",
+    "markdown.extensions.extra",
+    "admonition",
+]
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
 # Default is {} (no config at all)
@@ -1242,7 +1241,6 @@ EXTRA_HEAD_DATA = """
 """
 
 
-
 # The possibility to extract metadata from the filename by using a
 # regular expression.
 # To make it work you need to name parts of your regular expression.
@@ -1316,7 +1314,7 @@ EXTRA_HEAD_DATA = """
 # environment but is not recommended for HTTP/2.0 when caching is used.
 # Defaults to True.
 # USE_BUNDLES = True
-USE_BUNDLES = False # if you set this to True, the navbar menu no longer works :(
+USE_BUNDLES = False  # if you set this to True, the navbar menu no longer works :(
 
 # Plugins you don't want to use. Be careful :-)
 # DISABLED_PLUGINS = ["render_galleries"]
@@ -1377,12 +1375,13 @@ WARN_ABOUT_TAG_METADATA = False
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {}
-GLOBAL_CONTEXT['utterances_config'] = {'issue-term':"title",
-        'label':"Comments",
-        'theme':"github-light",
-        'crossorigin':"anonymous",
-        'repo': 'hpyproject/hpyproject.org',
-    }
+GLOBAL_CONTEXT["utterances_config"] = {
+    "issue-term": "title",
+    "label": "Comments",
+    "theme": "github-light",
+    "crossorigin": "anonymous",
+    "repo": "hpyproject/hpyproject.org",
+}
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
