@@ -20,3 +20,12 @@ jobs:
       - name: Run prettier
         run: |-
           npx prettier --check .
+
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "."
