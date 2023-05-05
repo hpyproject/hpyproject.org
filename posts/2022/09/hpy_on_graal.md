@@ -21,4 +21,3 @@ the migration process but also shows performance numbers. The source code is
 also publicly available.
 
 <!--TEASER_END-->
-

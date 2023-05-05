@@ -3,10 +3,10 @@
 .. slug: hello-hpy
 .. date: 2021-03-29 10:00:00 UTC
 .. author: antocuni
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags:
+.. category:
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -23,8 +23,7 @@ job at periodically communicating the status of HPy, so make sure to
 
 <!--TEASER_END-->
 
-What is HPy?
-============
+# What is HPy?
 
 Quoting the frontpage of our website:
 
@@ -35,12 +34,12 @@ The official [Python/C API](https://docs.python.org/3/c-api/index.html>) is
 specific to the current implementation of CPython: it exposes many
 internal details which makes it hard:
 
-  - to implement it for other Python implementations (e.g. PyPy, GraalPython,
-    Jython, IronPython, etc.)
+- to implement it for other Python implementations (e.g. PyPy, GraalPython,
+  Jython, IronPython, etc.)
 
-  - to experiment with new things inside CPython itself: e.g. using a GC
-    instead of refcounting, or to remove the GIL.
-  - to correctly check things like refcount handling: the external API gets mixed in with implementation details that should be hidden.
+- to experiment with new things inside CPython itself: e.g. using a GC
+  instead of refcounting, or to remove the GIL.
+- to correctly check things like refcount handling: the external API gets mixed in with implementation details that should be hidden.
 
 Over the years, it has become evident that
 [emulating the Python/C API in an efficient way is challenging](https://www.pypy.org/posts/2018/09/inside-cpyext-why-emulating-cpython-c-8083064623681286567.html),
@@ -50,24 +49,23 @@ implementations.
 
 There are several advantages to writing your C extension in HPy:
 
-  - it runs much faster on PyPy, and at native speed on CPython
+- it runs much faster on PyPy, and at native speed on CPython
 
-  - it is possible to compile a single binary which runs unmodified on all
-    supported Python implementations and versions
+- it is possible to compile a single binary which runs unmodified on all
+  supported Python implementations and versions
 
-  - it is simpler and more manageable than the Python/C API
+- it is simpler and more manageable than the Python/C API
 
-  - it provides an improved debugging experience: in "debug mode", HPy
-    actively checks for many common mistakes such as reference leaks and
-    invalid usage of objects after they have been deleted. It is possible to
-    turn the "debug mode" on at startup time, without needing to recompile
-    Python or the extension itself
+- it provides an improved debugging experience: in "debug mode", HPy
+  actively checks for many common mistakes such as reference leaks and
+  invalid usage of objects after they have been deleted. It is possible to
+  turn the "debug mode" on at startup time, without needing to recompile
+  Python or the extension itself
 
 See also the official docs for a more in-depth
 [overview](https://docs.hpyproject.org/en/latest/overview.html#hpy-overview).
 
-Show me an example
-===================
+# Show me an example
 
 This is a "normal" Python/C extension:
 
@@ -88,7 +86,7 @@ setup(
 ```pycon
 $ python setup.py build_ext --inplace
 ...
-$ python 
+$ python
 >>> import hello_old
 >>> hello_old.add(10, 20)
 30
@@ -154,7 +152,6 @@ There are a bunch of things which are different from the usual C-extension modul
     See also [Issue #150](https://github.com/hpyproject/hpy/issues/150)
     and [PR #182](https://github.com/hpyproject/hpy/pull/182).
 
-
 Let's continue our tour of `hello_new.c`:
 
 ```c
@@ -186,8 +183,7 @@ as adding `setup_requires=['hpy.devel']` and use `hpy_ext_modules`:
 
 {{% listing 2021/03/hello-hpy/setup.py python %}}
 
-Compiling HPy extensions
-========================
+# Compiling HPy extensions
 
 In this demo, we will show how to setup an environment to try HPy and compile
 extensions on both CPython and PyPy.
@@ -208,7 +204,6 @@ install a slightly old revision:
 
 - PyPy nighly builds: [main page](http://buildbot.pypy.org/nightly/) and
   [hpy branch](http://buildbot.pypy.org/nightly/hpy/)
-  
 - GraalPython nightly build: [Linux](https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.1.0-dev-20210330_0726/graalpython-dev-linux-amd64.tar.gz) or [macOS](https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.1.0-dev-20210330_0726/graalpython-dev-macos-amd64.tar.gz)
 
 - [source code](https://github.com/hpyproject/hpyproject.org/tree/main/listings/2021/03/hello-hpy) of this example
@@ -367,4 +362,4 @@ details, and show more interesting features than just a hello world.
 
 Stay tuned!
 
-*(edited on 2021-03-31 to include GraalPython)*
+_(edited on 2021-03-31 to include GraalPython)_

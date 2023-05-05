@@ -10,7 +10,6 @@
 .. type: text
 -->
 
-
 I'm happy to announce that we will finally have another PyPy/HPy/other sprint
 in Düsseldorf, Germany from September 19-23, 2022.
 
@@ -31,13 +30,13 @@ From the HPy point of view, there is no strict agenda. The main goal of the
 sprint is to make progress on HPy in any way you can think of.
 This includes but is not limited to:
 
-  - Review, discuss, maybe merge open GitHub PRs.
-  - Hacking on HPy: implement new features, fix bugs, etc.
-  - Come up with ideas for blog posts or even write blog posts.
-  - Migrate packages to HPy or just determine candidates for migration.
-  - Document the HPy API.
-  - Create small documented and tested porting examples and/or a small porting
-    guide.
+- Review, discuss, maybe merge open GitHub PRs.
+- Hacking on HPy: implement new features, fix bugs, etc.
+- Come up with ideas for blog posts or even write blog posts.
+- Migrate packages to HPy or just determine candidates for migration.
+- Document the HPy API.
+- Create small documented and tested porting examples and/or a small porting
+  guide.
 
 # Accommodation
 

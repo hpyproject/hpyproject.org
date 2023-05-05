@@ -2,17 +2,13 @@ This plugin allows to add static comments to your theme. Static comments are tak
 
 You must use a theme which supports static comments for them to be visible (see below for instructions on how to adjust a theme).
 
-
-Why use static comments?
-------------------------
+## Why use static comments?
 
 Static comments allow you to avoid using a dynamic (JavaScript-based) comment system. If you want users to be able to still comment things, you need to provide a form which could send the comment as an email to you, so you can create the comment files manually (or with a script).
 
 Static comments also allow you to import a legacy WordPress blog and convert it to a completely static Nikola blog, without having to use some external service for handling the comments.
 
-
-Comment files
--------------
+## Comment files
 
 Comment files are of the following form::
 
@@ -37,9 +33,7 @@ Most header fields are optional. `compiler` must specify a page compiler which a
 
 Comments can form a hierarchy; `parent_id` must be the comment ID of the parent comment, or left away if there's no parent.
 
-
-Inclusion in theme
-------------------
+## Inclusion in theme
 
 You need a static comments aware theme to be able to actually see the comments. To modify a theme accordingly, some helper functions are provided in `templates/*/static_comment_helpers.tmpl`. They can be used as follows.
 
@@ -71,10 +65,10 @@ In templates which list the posts (`list_post.tmpl`, `post_list_directive.tmpl` 
 
 Finally, you need to add support for some additional messages.
 
-* `"No comments."`;
-* `"{0} wrote on {1}:"` where `{0}` will be replaced by the author and `{1}` by the localized date;
-* `"No comments"`;
-* `"{0} comments"` where `{0}` will be replaced by a number larger than 1;
-* `"{0} comment"` where `{0}` will be replaced by `1`.
+- `"No comments."`;
+- `"{0} wrote on {1}:"` where `{0}` will be replaced by the author and `{1}` by the localized date;
+- `"No comments"`;
+- `"{0} comments"` where `{0}` will be replaced by a number larger than 1;
+- `"{0} comment"` where `{0}` will be replaced by `1`.
 
 Your theme might of course also print comments differently with other messages than these, by incorporating a modified version of `static_comment_helpers.tmpl`.

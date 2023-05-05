@@ -8,17 +8,18 @@
 }
 
 :link {
-    color: #3344dd;
-    text-decoration: underline;
+  color: #3344dd;
+  text-decoration: underline;
 }
 
-:visited :link:hover, :visited:hover {
-    color: #3344dd;
+:visited :link:hover,
+:visited:hover {
+  color: #3344dd;
 }
 
 #brand :link,
 #brand :visited {
-    color: inherit;
+  color: inherit;
 }
 
 pre.literal-block {
@@ -30,7 +31,7 @@ pre.literal-block {
 }
 
 pre.literal-block *:last-child {
-    margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 .myfooter {
@@ -48,8 +49,8 @@ pre.literal-block *:last-child {
 }
 
 #footer {
-    border-top: 1px solid #4F5151;
-    clear: both;
+  border-top: 1px solid #4f5151;
+  clear: both;
 }
 
 /* bootstrap-like container sizes at various breakpoints */
@@ -83,16 +84,14 @@ pre.literal-block *:last-child {
   }
 }
 
-
 .post {
-    float: left;
-    width: 70%;
+  float: left;
+  width: 70%;
 }
 
-
 div.sidebar {
-    float: left;
-    width: 27%;
+  float: left;
+  width: 27%;
 }
 
 .logotext {
@@ -104,9 +103,9 @@ div.sidebar {
 }
 
 .comment {
-  border-top: 1px solid #4F5151;
+  border-top: 1px solid #4f5151;
   margin-top: 1em;
-  padding: .5em 0;
+  padding: 0.5em 0;
 }
 
 /* For flex layout */
@@ -114,28 +113,32 @@ div.sidebar {
   display: flex;
   flex-direction: column;
   padding: 0;
-  width: 100%; }
-  .row .column {
-    display: block;
-    flex: 1 1 auto;
-    margin-left: 0;
-    max-width: 100%;
-    width: 100%; }
+  width: 100%;
+}
+.row .column {
+  display: block;
+  flex: 1 1 auto;
+  margin-left: 0;
+  max-width: 100%;
+  width: 100%;
+}
 
 @media (min-width: 40rem) {
   .row {
     flex-direction: row;
-    margin-left: -1.0rem;
-    width: calc(100% + 2.0rem); }
-    .row .column {
-      margin-bottom: inherit;
-      padding: 0 1.0rem;
-    }
+    margin-left: -1rem;
+    width: calc(100% + 2rem);
+  }
+  .row .column {
+    margin-bottom: inherit;
+    padding: 0 1rem;
+  }
 }
 
 @media screen and (max-width: 40rem) {
   .row .column {
-    text-align: center; }
+    text-align: center;
+  }
   div.sidebar {
     display: none;
   }
@@ -144,16 +147,17 @@ div.sidebar {
   }
 }
 
-
 .pb-4 {
-  padding-bottom: 6rem; }
+  padding-bottom: 6rem;
+}
 
 .text-sm {
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 .text-lg {
-  font-size: 2rem; }
-
+  font-size: 2rem;
+}
 
 /* For the responsive navbar, adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar */
 
@@ -162,7 +166,7 @@ div.sidebar {
   background: var(--nav-background);
 }
 
-.searchform input[type=text] {
+.searchform input[type="text"] {
   padding: 6px;
   border: none;
   font-size: 14px;
@@ -223,7 +227,7 @@ div.sidebar {
 .nav-container ul li a:not(:only-child):after,
 .nav-container ul li a:visited:not(:only-child):after {
   padding-left: 4px;
-  content: ' ▾';
+  content: " ▾";
 }
 .nav-container ul li ul li {
   min-width: 190px;
@@ -257,17 +261,16 @@ div.sidebar {
 }
 
 body {
-    color: #383939;
-    margin: 0;
-    padding: 0;
+  color: #383939;
+  margin: 0;
+  padding: 0;
 }
 
-
 @media only screen and (max-width: 798px) {
-    #content {
-        margin: 10px;
-        padding: 0;
-    }
+  #content {
+    margin: 10px;
+    padding: 0;
+  }
 
   .nav-mobile {
     display: block;
@@ -322,7 +325,7 @@ body {
   background: black;
   position: absolute;
   display: block;
-  content: '';
+  content: "";
   transition: all 300ms ease-in-out;
 }
 #nav-toggle span:before {
@@ -334,7 +337,8 @@ body {
 #nav-toggle.active span {
   background-color: transparent;
 }
-#nav-toggle.active span:before, #nav-toggle.active span:after {
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
   top: 0;
 }
 #nav-toggle.active span:before {
@@ -358,7 +362,7 @@ body {
 #download img {
   width: 22px;
   height: 22px;
-} 
+}
 
 table {
   border-top: 2px solid darkolivegreen;
@@ -374,9 +378,9 @@ tbody tr:nth-child(odd) {
 }
 
 .metadata {
-    border-bottom: 1px solid darkolivegreen;
+  border-bottom: 1px solid darkolivegreen;
 }
 
 .admonition-title {
-    margin-top: 0px;
+  margin-top: 0px;
 }
