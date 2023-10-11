@@ -99,7 +99,7 @@ that in CPython.
 
 We were also asked to give a talk and to concentrate in the talk on two things:
 
-1. How do handles affect the API, aned
+1. How do handles affect the API, and
 2. What is the reason for the HPy context to contain the function table.
 
 We didn't _advertise_ HPy in our talk but we talked about why opaque handles
