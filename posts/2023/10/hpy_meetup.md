@@ -121,7 +121,7 @@ will improve lives for alternative implementations also. Sam, the author of
 Python's Nogil fork, plans to make `PyObject *` opaque (so it will narrow to the
 semantics of a handle) and also, the `Py_INCREF` will use an indirection over a
 function pointer to actually call the incref logic. This is, again, a big step
-forward for alternative implementations
+forward for alternative implementations.
 
 # Cython/HPy
 
