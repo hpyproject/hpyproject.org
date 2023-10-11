@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-We just ended our rather informal HPy meetup in Brno (Czeck Republic) which
+We just ended our rather informal HPy meetup in Brno (Czech Republic) which
 started on Saturday (October 7th) and lasted until Tuesday (October 10th).
 
 The main topic if the HPy meetup was:
