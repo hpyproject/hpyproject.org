@@ -109,7 +109,7 @@ We further showed that having the function table in the context gives us a lot
 of flexibility and finally enables us to switch on the debug mode essentially at
 run time (when an extension is loaded).
 
-We are not sure if we could convince everyone, that those concepts are useful.
+We are not sure if we managed to convince everyone that those concepts are useful.
 The biggest problem is that introducing handles and a context argument will
 radically change the API and break a lot of extensions.
 
