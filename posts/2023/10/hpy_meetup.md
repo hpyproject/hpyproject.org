@@ -48,8 +48,8 @@ She identified nine categories for problems:
 8. Implementation Flaws
 9. Missing Functionality
 
-At this point, I also want to mentioned the stengths of the C API which I can
-only agree on:
+At this point, I also want to mentioned the stengths of the C API which we also can
+agree on:
 
 - Heap types
 - APIs taking a C string to look up based on Python strings
