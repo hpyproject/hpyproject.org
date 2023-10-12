@@ -48,7 +48,7 @@ She identified nine categories for problems:
 8. Implementation Flaws
 9. Missing Functionality
 
-At this point, I also want to mentioned the stengths of the C API which we also can
+At this point, I also want to mentioned the strengths of the C API which we also can
 agree on:
 
 - Heap types
