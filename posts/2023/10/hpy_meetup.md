@@ -26,7 +26,7 @@ Petr Viktorin, one of the most active CPython core developers, invited us to
 partially attend the CPython core developer sprint. As a part of the sprint, he
 organized a C API Summit where we were invited and happily attended this event.
 
-Besides of lots of discussions, there were also very interesting presentation
+Besides of lots of discussions, there were also very interesting presentations
 about the C API:
 
 ## 1. C API Work Group Summary
