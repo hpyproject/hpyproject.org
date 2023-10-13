@@ -17,9 +17,9 @@ and was again made available on PyPI.
 This is the first release that also provides binary wheels, so installation is
 now fast and smooth as you expect it.
 
-The major highlights of the release are support subclassing of built-in types,
-support for metaclasses, the trace mode, multi-phase module initialization, and
-the hybrid ABI. Please checkout the full release notes here on GitHub:
+The major highlights of the release are support for subclassing of built-in
+types, metaclasses, the trace mode, multi-phase module initialization, and the
+hybrid ABI. Please checkout the full release notes here on GitHub:
 https://github.com/hpyproject/hpy/releases/tag/0.9.0
 
 Also, we invested a lot of effort to improve [official
