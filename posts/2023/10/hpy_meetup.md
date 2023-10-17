@@ -31,7 +31,7 @@ about the C API:
 
 ## 1. C API Work Group Summary
 
-Irit Katriel presented the current status of the [C API Work Group
+Irit presented the current status of the [C API Work Group
 GitHub](https://github.com/capi-workgroup) organisation. The idea of this GitHub
 org was to gather curent [problems](https://github.com/capi-workgroup/problems)
 of the C API and also to collect ideas for the (re-)volution of the API. Irit
@@ -48,7 +48,7 @@ She identified nine categories for problems:
 8. Implementation Flaws
 9. Missing Functionality
 
-At this point, I also want to mentioned the strengths of the C API which we also can
+She also mentioned strengths of the C API which the people contributing to the repository
 agree on:
 
 - Heap types
@@ -62,12 +62,8 @@ Now, the idea is to write an _Informational PEP_ and then to create:
 
 ## 2. Petr's Vision for the C API
 
-Petr presented his understanding of how the C API should look in
-future. Many of the concepts he presented are very similar to core concept of
-HPy. Maybe the HPy project could positively influence him (since Petr also
-regularly participates in the HPy dev call meetings) but who knows?
-
-Petr made seven suggestions:
+Petr presented his understanding of how the C API should look in future. He made
+seven suggestions:
 
 1. _Split_ API from ABI so you can compile the API that it would use different ABI
    variants.
@@ -86,13 +82,13 @@ Petr made seven suggestions:
    built-in objects to have type safety already at the C language level.
 
 6. _Blueprint structures_: Creating types and objects should rather be done by
-   using specifications than by allocting empty objects and filling them with
+   using specifications than by allocating empty objects and filling them with
    content. Just think of `PyType_Spec` or `PyModuleDef`.
 
 7. _Context argument_: Every API function should have a context argument.
 
-I would say, except of points 4 and 5, HPy already follows everything. We, the
-HPy teams, need to say that this sounds very good and we would be happy to see
+Except for points 4 and 5, these goals are very close to HPy's. We, the
+HPy team, have to say that this sounds very good and we would be happy to see
 that in CPython.
 
 ## 3. HPy's Lessons Learned
@@ -113,15 +109,16 @@ We are not sure if we managed to convince everyone that those concepts are usefu
 The biggest problem is that introducing handles and a context argument will
 radically change the API and break a lot of extensions.
 
-# Discussions
+## Discussions
 
 We had a lot of good discussions and probably the most important one was about
-the Nogil implementation because this implies some very interesting changes that
-will improve lives for alternative implementations also. Sam, the author of
-Python's Nogil fork, plans to make `PyObject *` opaque (so it will narrow to the
-semantics of a handle) and also, the `Py_INCREF` will use an indirection over a
-function pointer to actually call the incref logic. This is, again, a big step
-forward for alternative implementations.
+the [PEP 703 (noGIL)](https://peps.python.org/pep-0703/) implementation and the
+new version of ABI (abi4) that is planned to be compatible with both noGIL and
+GIL builds of CPython. In order to achieve that, Sam, the author of PEP
+703, plans to make `PyObject *` opaque (so it will narrow to the semantics of a
+handle) and also, the `Py_INCREF` will use an indirection over a function
+pointer to actually call the incref logic. This is, again, a big step forward
+for alternative implementations.
 
 # Cython/HPy
 
