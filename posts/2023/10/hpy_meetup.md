@@ -107,9 +107,11 @@ run time (when an extension is loaded).
 
 We are not sure if we managed to convince everyone that those concepts are useful.
 The biggest problem is that introducing handles and a context argument will
-radically change the API and break a lot of extensions.
+radically change the API and break a lot of extensions (see also
+[C API Workgroup - API Revolution #2](https://github.com/capi-workgroup/api-revolution/issues/2)
+and [C API Workgroup - API Revolution #7](https://github.com/capi-workgroup/api-revolution/issues/7)).
 
-## Discussions
+# Discussions
 
 We had a lot of good discussions and probably the most important one was about
 the [PEP 703 (noGIL)](https://peps.python.org/pep-0703/) implementation and the
