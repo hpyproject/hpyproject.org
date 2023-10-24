@@ -22,21 +22,24 @@ The main topics of the HPy meetup were:
 
 # The CPython Core Dev Sprint
 
-Petr Viktorin, one of the most active CPython core developers, invited us to
+Petr Viktorin, one of the CPython core developers, invited us to
 partially attend the CPython core developer sprint. As a part of the sprint, he
-organized a C API Summit where we were invited and happily attended this event.
+organized a C API Summit Monday where we were invited and happily attended this
+event.
 
 Besides of lots of discussions, there were also very interesting presentations
 about the C API:
 
 ## 1. C API Work Group Summary
 
-Irit presented the current status of the [C API Work Group
-GitHub](https://github.com/capi-workgroup) organisation. The idea of this GitHub
-org was to gather curent [problems](https://github.com/capi-workgroup/problems)
-of the C API and also to collect ideas for the (re-)volution of the API. Irit
-thankfully went over all issues and discussions to structure and summarize them.
-She identified nine categories for problems:
+Irit
+[presented](https://github.com/iritkatriel/talks/blob/main/2023_Sprint_Brno_C_API.pdf)
+the current status of the [C API Work Group GitHub](https://github.com/capi-workgroup)
+organisation. The idea of this GitHub org was to gather curent
+[problems](https://github.com/capi-workgroup/problems) of the C API and also to
+collect ideas for the (re-)volution of the API. Irit thankfully went over all
+issues and discussions to structure and summarize them. She identified nine
+categories for problems:
 
 1. API Evolution and Maintenance
 2. API Specification and Abstraction
@@ -60,10 +63,13 @@ Now, the idea is to write an _Informational PEP_ and then to create:
 1. A process for discussions about replacement APIs
 2. Guidelines for [evolution of the C API](https://github.com/capi-workgroup/api-evolution).
 
+The [PEP draft](https://github.com/python/peps/pull/3491) is already available.
+
 ## 2. Petr's Vision for the C API
 
-Petr presented his understanding of how the C API should look in future. He made
-seven suggestions:
+Petr presented his understanding of how the C API should look in future. The
+[slides](https://drive.google.com/file/d/148NLRPXGZGI1SXfKLMFvQc_iv67hPJQS/view?usp=sharing)
+for his talk are public. He made seven suggestions:
 
 1. _Split_ API from ABI so you can compile the API that it would use different ABI
    variants.
@@ -107,7 +113,7 @@ run time (when an extension is loaded).
 
 We are not sure if we managed to convince everyone that those concepts are useful.
 The biggest problem is that introducing handles and a context argument will
-radically change the API and break a lot of extensions (see also
+radically change the API and require changes in many libraries (see also
 [C API Workgroup - API Revolution #2](https://github.com/capi-workgroup/api-revolution/issues/2)
 and [C API Workgroup - API Revolution #7](https://github.com/capi-workgroup/api-revolution/issues/7)).
 
@@ -118,9 +124,9 @@ the [PEP 703 (noGIL)](https://peps.python.org/pep-0703/) implementation and the
 new version of ABI (abi4) that is planned to be compatible with both noGIL and
 GIL builds of CPython. In order to achieve that, Sam, the author of PEP
 703, plans to make `PyObject *` opaque (so it will narrow to the semantics of a
-handle) and also, the `Py_INCREF` will use an indirection over a function
-pointer to actually call the incref logic. This is, again, a big step forward
-for alternative implementations.
+handle) and also, the `Py_INCREF` will, in some cases, use an indirection over a
+function pointer to actually call the incref logic. This is, again, a big step
+forward for alternative implementations.
 
 # Cython/HPy
 
