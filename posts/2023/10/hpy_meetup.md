@@ -99,7 +99,8 @@ that in CPython.
 
 ## 3. HPy's Lessons Learned
 
-We were also asked to give a talk and to concentrate in the talk on two things:
+We were also asked to give a [talk](/talks/2023/10/things_to_learn_from_hpy.pdf)
+and to concentrate in the talk on two things:
 
 1. How do handles affect the API, and
 2. What is the reason for the HPy context to contain the function table.
