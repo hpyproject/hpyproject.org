@@ -117,6 +117,14 @@ radically change the API and require changes in many libraries (see also
 [C API Workgroup - API Revolution #2](https://github.com/capi-workgroup/api-revolution/issues/2)
 and [C API Workgroup - API Revolution #7](https://github.com/capi-workgroup/api-revolution/issues/7)).
 
+## 4. Python C API: Past, Present, and Future
+
+Victor did a thorough [presentation](https://github.com/vstinner/talks/blob/main/2023-CoreDevSprint-Brno/c-api.pdf)
+of the past, present, and (possible) future of the Python C API. He pointed out
+some past and present problems and gave some impression of its complexity. Victor
+also suggests to make the stable ABI be the default. Overall, he sees a
+positive trend in how the C API evolves.
+
 # Discussions
 
 We had a lot of good discussions and probably the most important one was about
