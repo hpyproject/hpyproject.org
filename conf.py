@@ -676,6 +676,10 @@ OUTPUT_FOLDER = "public"
 #    ".js": [filters.closure_compiler],
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 # }
+from nikola import filters
+FILTERS = {
+    ".html": [filters.add_header_permalinks],
+}
 
 # Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
 # YUI_COMPRESSOR_EXECUTABLE = 'yui-compressor'
@@ -1229,7 +1233,7 @@ FEED_TEASERS = False
 # BODY_END = ""
 
 SEARCH_FORM = """
-<form class="navbar-form navbar-left" action="/search.html" role="search">
+<form class="navbar-form navbar-left" action="/search/index.html" role="search">
     <div class="form-group">
         <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search&hellip;" autocomplete="off">
     </div>
@@ -1269,7 +1273,7 @@ EXTRA_HEAD_DATA = """
 # HIDE_REST_DOCINFO = False
 
 # Map metadata from other formats to Nikola names.
-# Supported formats: yaml, toml, rest_docinfo, markdown_metadata
+# Supported formats: ${_METADATA_MAPPING_FORMATS}
 # METADATA_MAPPING = {}
 #
 # Example for Pelican compatibility:
@@ -1280,7 +1284,7 @@ EXTRA_HEAD_DATA = """
 # Other examples: https://getnikola.com/handbook.html#mapping-metadata-from-other-formats
 
 # Map metadata between types/values. (Runs after METADATA_MAPPING.)
-# Supported formats: nikola, yaml, toml, rest_docinfo, markdown_metadata
+# Supported formats: nikola, ${_METADATA_MAPPING_FORMATS}
 # The value on the right should be a dict of callables.
 # METADATA_VALUE_MAPPING = {}
 # Examples:
