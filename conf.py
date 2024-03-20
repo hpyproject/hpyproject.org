@@ -677,6 +677,7 @@ OUTPUT_FOLDER = "public"
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 # }
 from nikola import filters
+
 FILTERS = {
     ".html": [filters.add_header_permalinks],
 }
