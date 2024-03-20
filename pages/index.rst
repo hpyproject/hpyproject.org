@@ -53,10 +53,10 @@ What are the advantages of HPy?
 Current status
 ==============
 
-HPy is under active development. `0.0.4`__ is the latest alpha release but we
+HPy is under active development. `0.9.0`__ is the latest alpha release but we
 will soon leave the _alpha_ state and are working hard towards a stable release.
 
-.. __: https://hpyproject.org/blog/posts/2022/06/hpy-0.0.4-third-public-release/
+.. __: https://hpyproject.org/blog/posts/2023/10/hpy-0.9.0-fourth-public-release/
 
 We feel that the HPy ABI is stable enough now that we can fulfill our backwards
 and forwards binary compatibility promises with the upcoming release, and that
