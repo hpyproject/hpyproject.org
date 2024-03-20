@@ -32,6 +32,10 @@ behalf using the [GitHub
 OAuth](https://developer.github.com/v3/oauth/#web-application-flow) flow.
 Alternatively, users can comment on the GitHub issue directly.
 
+## Build requirements
+
+Python 3.10 is required to build the web pages.
+
 ## Deployment
 
 Any changes to the main branch (including merging PRs) regenerates and pushes
