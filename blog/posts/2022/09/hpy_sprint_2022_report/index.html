@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HPy Sprint Status Update and Feedback Session | HPy</title>
+<link href="../../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://hpyproject.org/blog/posts/2022/09/hpy_sprint_2022_report/">
+<link rel="icon" href="../../../../../favicon2.ico" sizes="16x16">
+<link rel="icon" href="../../../../../favicon32x32.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../../../../assets/css/tipuesearch.css">
+<meta name="author" content="fangerer">
+<link rel="prev" href="../hpy_on_graal_and_mpl/" title="HPy on GraalPy and Matplotlib/HPy" type="text/html">
+<link rel="next" href="../../../2023/10/hpy-meetup-2023/" title="HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)" type="text/html">
+<meta property="og:site_name" content="HPy">
+<meta property="og:title" content="HPy Sprint Status Update and Feedback Session">
+<meta property="og:url" content="https://hpyproject.org/blog/posts/2022/09/hpy_sprint_2022_report/">
+<meta property="og:description" content="As we announced in
+this blog post,
+we are currently having our joint PyPy/HPy/GraalPy sprint in Düsseldorf.
+On Thursday (September 22nd, 2022), we did the HPy sprint report. Most notably,
+we also had ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-09-26T10:00:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+        <header id="header"><!-- Adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar --><section class="navigation"><div class="nav-container">
+            <div class="brand">
+                <a href="../../../../../index.html">
+                    <image id="toplogo" src="../../../../../images/hpy-logo.svg" width="75px;" alt="HPy/"></image></a>
+            </div>
+            <div class="nav-container-1">
+                    <div class="searchform" role="search">
+                        
+<form class="navbar-form navbar-left" action="../../../../../search/index.html" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search…" autocomplete="off">
+</div>
+</form>
+
+                    </div>
+                <nav><ul class="nav-list">
+<li> <a href="https://hpy.readthedocs.io/">Dev Docs</a> </li>  
+            <li> 
+                <a href="#!">Blog</a>
+                <ul class="nav-dropdown">
+<li> <a href="../../../../../blog">Index</a> </li>  
+                    <li> <a href="../../../../../categories">Tags</a> </li>  
+                    <li> <a href="../../../../../archive.html">Archive by year</a> </li>  
+                    <li> <a href="../../../../../rss.xml">RSS feed</a> </li>  
+                </ul>
+</li>
+
+                    </ul></nav><div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"> <span></span></a>
+                </div>
+            </div>
+        </div>
+    </section></header><div id="container">
+         <main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><div class="post">
+          <header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">HPy Sprint Status Update and Feedback Session</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    <a class="u-url" href="../../../../../authors/fangerer/">fangerer</a>
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2022-09-26T10:00:00Z" itemprop="datePublished" title="2022-09-26 10:00">2022-09-26 10:00</time></a>
+            </p>
+                <p class="commentline">            <a href="#utterances-thread">Comments</a>
+
+
+            
+        </p>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p>As we announced in
+<a href="https://hpyproject.org/blog/posts/2022/07/dusseldorf-sprint-2022/">this blog post</a>,
+we are currently having our joint PyPy/HPy/GraalPy sprint in Düsseldorf.</p>
+<p>On Thursday (September 22nd, 2022), we did the HPy sprint report. Most notably,
+we also had several CPython core developers in the call.</p>
+<p>The sprint report was streamed on
+<a href="https://www.twitch.tv/pypyproject">Twitch</a> and the recording is available here:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kl5w8uR6hGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--TEASER_END-->
+
+<h3 id="hpy-sprint-call-with-cpython-core-developers">HPy Sprint Call with CPython Core Developers<a href="#hpy-sprint-call-with-cpython-core-developers" class="headerlink" title="Permalink to this heading">¶</a></h3>
+<p>One of the main goals in the sprint was to write a PEP to officially propose
+HPy as an Python C extension API. We started to do so but before we actually
+submit this PEP, we wanted to have some feedback. So, we invited the Python
+core developers to our call and some of them joined.</p>
+<p>We gave a short overview of HPy since not everyone might know it yet.
+We talked about the goals and non-goals of HPy and basically asked if Python
+core developers would be willing to participate in HPy design discussions.
+We discussed PSF endorsement and the conclusion was that we need to talk to
+the PSF.</p>
+<p>We had some very good discussions and we also got some valuable feedback.
+Our next steps are now to incorporate this feedback and prepare the PEP to
+continue discussions there and gather more feedback.</p>
+<p>We thank the Python core developers for participating in the call and for the
+offered support.</p>
+<h3 id="call-with-numpy-core-developer-sebastian-berg">Call with NumPy Core Developer Sebastian Berg<a href="#call-with-numpy-core-developer-sebastian-berg" class="headerlink" title="Permalink to this heading">¶</a></h3>
+<p>Since we are working on the migration of NumPy to HPy, we had a call with
+Sebastian Berg on Tuesday (September 20th, 2022).</p>
+<p>We discussed some problems we discovered during our migration work and were
+discussing how to solve it.</p>
+<p>These were the main discussion points:</p>
+<ul>
+<li>
+<p>NumPy's structured data type allows to have objects in NumPy arrays which
+  problematic for HPy. This is mainly because doesn't allow to use the API
+  during deallocation of an object. Hence, there is no way to determine the
+  location of those objects by fetching the data type (which requires an API
+  call). We discussed to mirror the structure in pure C-level data structures
+  instead.</p>
+</li>
+<li>
+<p>HPy requires to migration all static types to heap types and we discovered
+  that static type behave a bit differently compared to heap types in the case
+  of multiple inheritance. We discussed if that is a bug that CPython needs
+  to solve or if that is something that NumPy should change. So far, it looks
+  rather to be a CPython problem since heap types are pretty new.</p>
+</li>
+<li>
+<p>We further discussed how to handle NumPy's C API when migrating to HPy. We
+  agreed that we will probably need to provide a separate NumPy HPy C API as
+  well which will maybe removed at some point in future.</p>
+</li>
+</ul>
+<h3 id="main-technical-achievements-of-the-sprint">Main Technical Achievements of the Sprint<a href="#main-technical-achievements-of-the-sprint" class="headerlink" title="Permalink to this heading">¶</a></h3>
+<ul>
+<li>
+<p>We have added support for stack traces when running in the debug mode on Mac
+  OS X (<a href="https://github.com/hpyproject/hpy/pull/346">PR 346</a>).</p>
+</li>
+<li>
+<p>We are up to finish our incremental porting example
+  (<a href="https://github.com/hpyproject/hpy/pull/246/files">PR 246</a>)</p>
+</li>
+<li>
+<p>HPy does now also correctly support object members in HPy types
+  (<a href="https://github.com/hpyproject/hpy/pull/347">PR 347</a>).</p>
+</li>
+</ul>
+</div>
+      <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../hpy_on_graal_and_mpl/" rel="prev" title="HPy on GraalPy and Matplotlib/HPy">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../2023/10/hpy-meetup-2023/" rel="next" title="HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                      <div data-title="HPy Sprint Status Update and Feedback Session" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="hpyproject/hpyproject.org" issue-term="title" label="Comments" theme="github-light" crossorigin="anonymous"></script></section>
+</div>
+    <div class="sidebar">
+<div>
+  <h2>
+    The HPy blogposts
+  </h2>
+  <div>
+    Create a guest post via a PR to the <a href="https://github.com/hpyproject/hpyproject.github.io/">source repo</a>
+  </div>
+</div>
+    <div id="global-recent-posts">
+    <h2>
+      Recent Posts
+    </h2>
+    <ul class="post-list">
+      <li>
+        <a href="/blog/posts/2023/10/hpy-0.9.0-fourth-public-release/" class="listtitle">hpy 0.9.0: Fourth public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2023/10/hpy-meetup-2023/" class="listtitle">HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/09/hpy_sprint_2022_report/" class="listtitle">HPy Sprint Status Update and Feedback Session</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/09/hpy_on_graal_and_mpl/" class="listtitle">HPy on GraalPy and Matplotlib/HPy</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/07/dusseldorf-sprint-2022/" class="listtitle">Dusseldorf PyPy/HPy/other sprint Sept 19-23, 2022</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/06/hpy-0.0.4-third-public-release/" class="listtitle">hpy 0.0.4: Third public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/10/hpy-0.0.3-second-public-release/" class="listtitle">hpy 0.0.3: Second public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/07/hpy-0.0.2-first-public-release/" class="listtitle">hpy 0.0.2: First public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/05/hpy-irc-moves-to-libera-chat/" class="listtitle">#hpy IRC moves to Libera.Chat</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/05/hpy-python-language-summit/" class="listtitle">HPy @ Python Language Summit</a>
+      </li>
+    </ul>
+  </div>
+
+          <div id="global-archive-list">
+          <h2>
+            Archives
+          </h2>
+          <ul class="archive-level archive-level-1">
+            <li><a class="reference" href="/2021/">2021</a> (6)
+            </li>
+            <li><a class="reference" href="/2022/">2022</a> (4)
+            </li>
+            <li><a class="reference" href="/2023/">2023</a> (2)
+            </li>
+          </ul>
+        </div>    </div>
+</article></main><footer id="footer"><p>
+</p>
+<div class="myfooter">
+  <div>
+    <img src="../../../../../images/hpy-logo.svg" alt="PyPy Logo">
+</div>
+  <div class="logotext">
+     Contents © 2024 <a href="mailto:hpy-dev@python.org">The HPy Team</a>
+    Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+  </div>
+  <div style="margin-left: auto">
+  <a href="../../../../../rss.xml">RSS feed</a>
+</div>
+
+            
+        
+
+    </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script><script src="../../../../../assets/js/styles.js"></script></footer>
+</div>
+</body>
+</html>
