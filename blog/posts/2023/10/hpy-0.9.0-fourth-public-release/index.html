@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hpy 0.9.0: Fourth public release | HPy</title>
+<link href="../../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://hpyproject.org/blog/posts/2023/10/hpy-0.9.0-fourth-public-release/">
+<link rel="icon" href="../../../../../favicon2.ico" sizes="16x16">
+<link rel="icon" href="../../../../../favicon32x32.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../../../../assets/css/tipuesearch.css">
+<meta name="author" content="fangerer">
+<link rel="prev" href="../hpy-meetup-2023/" title="HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)" type="text/html">
+<meta property="og:site_name" content="HPy">
+<meta property="og:title" content="hpy 0.9.0: Fourth public release">
+<meta property="og:url" content="https://hpyproject.org/blog/posts/2023/10/hpy-0.9.0-fourth-public-release/">
+<meta property="og:description" content="I'm excited to announce that HPy 0.9 was recently released!
+The fourth official HPy release comes with many new features
+and was again made available on PyPI.
+This is the first release that also provi">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-10-12T19:00:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+        <header id="header"><!-- Adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar --><section class="navigation"><div class="nav-container">
+            <div class="brand">
+                <a href="../../../../../index.html">
+                    <image id="toplogo" src="../../../../../images/hpy-logo.svg" width="75px;" alt="HPy/"></image></a>
+            </div>
+            <div class="nav-container-1">
+                    <div class="searchform" role="search">
+                        
+<form class="navbar-form navbar-left" action="../../../../../search/index.html" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search…" autocomplete="off">
+</div>
+</form>
+
+                    </div>
+                <nav><ul class="nav-list">
+<li> <a href="https://hpy.readthedocs.io/">Dev Docs</a> </li>  
+            <li> 
+                <a href="#!">Blog</a>
+                <ul class="nav-dropdown">
+<li> <a href="../../../../../blog">Index</a> </li>  
+                    <li> <a href="../../../../../categories">Tags</a> </li>  
+                    <li> <a href="../../../../../archive.html">Archive by year</a> </li>  
+                    <li> <a href="../../../../../rss.xml">RSS feed</a> </li>  
+                </ul>
+</li>
+
+                    </ul></nav><div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"> <span></span></a>
+                </div>
+            </div>
+        </div>
+    </section></header><div id="container">
+         <main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><div class="post">
+          <header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">hpy 0.9.0: Fourth public release</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    <a class="u-url" href="../../../../../authors/fangerer/">fangerer</a>
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-10-12T19:00:00Z" itemprop="datePublished" title="2023-10-12 19:00">2023-10-12 19:00</time></a>
+            </p>
+                <p class="commentline">            <a href="#utterances-thread">Comments</a>
+
+
+            
+        </p>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p>I'm excited to announce that HPy 0.9 was recently released!
+The fourth official HPy release comes with many new features
+and was again made available on PyPI.</p>
+<p>This is the first release that also provides binary wheels, so installation is
+now fast and smooth as you expect it.</p>
+<p>The major highlights of the release are support for subclassing of built-in
+types, metaclasses, the trace mode, multi-phase module initialization, and the
+hybrid ABI. Please checkout the full release notes here on GitHub:
+https://github.com/hpyproject/hpy/releases/tag/0.9.0</p>
+<p>Also, we invested a lot of effort to improve <a href="https://docs.hpyproject.org/en/0.9.0/overview.html">official
+documentation</a>.</p>
+<p>Great news too is that this release was used to make a first
+(partially-migrated) port of NumPy, we call it
+<a href="https://github.com/hpyproject/numpy-hpy">NumPy/HPy</a>, run some examples.</p>
+<!--TEASER_END-->
+
+<h2 id="what-is-hpy">What is HPy?<a href="#what-is-hpy" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<p>HPy provides a new API for extending Python in C. In other words, you use
+<code>#include &lt;hpy.h&gt;</code> instead of <code>#include &lt;Python.h&gt;</code>. For more info, look at
+the
+<a href="https://docs.hpyproject.org/en/0.9.0/overview.html">official documentation</a>.</p>
+<h2 id="installation">Installation<a href="#installation" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<p>HPy 0.9 is best tested on Linux and Mac OS X systems but there is also initial
+support for Windows (both <code>x86_64</code>). For CPython, you need to install it
+manually, using pip:</p>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">hpy</span><span class="o">==</span><span class="m">0</span>.9.0
+</pre></div>
+
+
+<p><a href="https://pypy.org">PyPy</a> and <a href="https://graalvm.org/python/">GraalPy</a> usually
+already come with intrinsic HPy support, so no installation is necessary.
+HPy 0.9 is already included in <a href="https://github.com/oracle/graalpython/releases/tag/graal-23.1.0">GraalPy
+23.1</a>.
+Unfortunately, due to lack of resources, development is still in progress for
+PyPy but should be finished soon.</p>
+<p>Also checkout PyPy's nightly builds to follow the progress:</p>
+<ul>
+<li><a href="http://buildbot.pypy.org/nightly/">PyPy nightly builds</a></li>
+</ul>
+<p>To check the version of HPy which is shipped with those, you can either use
+<code>pip</code> or <code>hpy.universal.get_version()</code>.</p>
+<h2 id="major-features">Major Features<a href="#major-features" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li>Support subclasses of built-in types</li>
+</ul>
+<p>It is now possible to create pure HPy types that inherit from built-in types like <code>type</code> or <code>float</code>. This was already possible before but in a very limited way, i.e., by setting <code>HPyType_Spec.basicsize</code> to <code>0</code>. In this case, the type implicitly inherited the basic size of the supertype but that also means that you cannot have a custom C struct. It is now possible inherit from a built-in type <strong>AND</strong> have a custom C struct. For further reference, see <a href="https://docs.hpyproject.org/en/0.9.0/api-reference/hpy-type.html#c.HPyType_Spec.builtin_shape">HPyType_Spec.builtin_shape</a> and <a href="https://docs.hpyproject.org/en/0.9.0/api-reference/hpy-type.html#c.HPyType_BuiltinShape">HPyType_BuiltinShape</a>.</p>
+<ul>
+<li>Support for metaclasses</li>
+</ul>
+<p>HPy now supports creating types with metaclasses. This can be done by passing type specification parameter with kind <code>HPyType_SpecParam_Metaclass</code> when calling <code>HPyType_FromSpec</code>.</p>
+<ul>
+<li><a href="https://docs.hpyproject.org/en/0.9.0/overview.html#term-HPy-Hybrid-ABI">HPy Hybrid ABI</a></li>
+</ul>
+<p>In addition to <code>CPython ABI</code> and <code>HPy Universal ABI</code>, we now introduced the Hybrid ABI. The major difference is that whenever you use a legacy API like <code>HPy_AsPyObject</code> or <code>HPy_FromPyObject</code>, the prdouced binary will then be specific to one interpreter. This was necessary to ensure that universal binaries are really portable and can be used on any HPy-capable interpreter.</p>
+<ul>
+<li><a href="https://docs.hpyproject.org/en/0.9.0/trace-mode.html">Trace Mode</a></li>
+</ul>
+<p>Similar to the <a href="https://docs.hpyproject.org/en/0.9.0/debug-mode.html">Debug Mode</a>, HPy now provides the Trace Mode that can be enabled at runtime and helps analyzing API usage and identifying performance issues.</p>
+<ul>
+<li><a href="https://docs.hpyproject.org/en/0.9.0/porting-guide.html#multi-phase-module-initialization">Multi-phase Module Initialization</a></li>
+</ul>
+<p>HPy now support multi-phase module initialization which is an important feature in particular needed for two important use cases: (1) module state support (which is planned to be introduced in the next major release), and (2) subinterpreters. We decided to drop support for single-phase module initialization since this makes the API cleaner and easier to use.</p>
+<ul>
+<li>HPy <a href="https://docs.hpyproject.org/en/0.9.0/porting-guide.html#calling-protocol">Calling Protocol</a>
+</li>
+</ul>
+<p>This was a big missing piece and is now eventually available. It enables slot <code>HPy_tp_call</code>, which can now be used in the HPy type specification. We decided to use a calling convention similar to CPython's vectorcall calling convention. This is: the arguments are passed in a C array and the keyword argument names are provided as a Python tuple. Before this release, the only way to create a callable type was to set the special method <code>__call__</code>. However, this has several disadvantages. In particlar, poor performance on CPython (and maybe other implementations) and it was not possible to have specialized call function implementations per object (see <code>HPy_SetCallFunction</code>)</p>
+      </div>
+      <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../hpy-meetup-2023/" rel="prev" title="HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                      <div data-title="hpy 0.9.0: Fourth public release" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="hpyproject/hpyproject.org" issue-term="title" label="Comments" theme="github-light" crossorigin="anonymous"></script></section>
+</div>
+    <div class="sidebar">
+<div>
+  <h2>
+    The HPy blogposts
+  </h2>
+  <div>
+    Create a guest post via a PR to the <a href="https://github.com/hpyproject/hpyproject.github.io/">source repo</a>
+  </div>
+</div>
+    <div id="global-recent-posts">
+    <h2>
+      Recent Posts
+    </h2>
+    <ul class="post-list">
+      <li>
+        <a href="/blog/posts/2023/10/hpy-0.9.0-fourth-public-release/" class="listtitle">hpy 0.9.0: Fourth public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2023/10/hpy-meetup-2023/" class="listtitle">HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/09/hpy_sprint_2022_report/" class="listtitle">HPy Sprint Status Update and Feedback Session</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/09/hpy_on_graal_and_mpl/" class="listtitle">HPy on GraalPy and Matplotlib/HPy</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/07/dusseldorf-sprint-2022/" class="listtitle">Dusseldorf PyPy/HPy/other sprint Sept 19-23, 2022</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/06/hpy-0.0.4-third-public-release/" class="listtitle">hpy 0.0.4: Third public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/10/hpy-0.0.3-second-public-release/" class="listtitle">hpy 0.0.3: Second public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/07/hpy-0.0.2-first-public-release/" class="listtitle">hpy 0.0.2: First public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/05/hpy-irc-moves-to-libera-chat/" class="listtitle">#hpy IRC moves to Libera.Chat</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/05/hpy-python-language-summit/" class="listtitle">HPy @ Python Language Summit</a>
+      </li>
+    </ul>
+  </div>
+
+          <div id="global-archive-list">
+          <h2>
+            Archives
+          </h2>
+          <ul class="archive-level archive-level-1">
+            <li><a class="reference" href="/2021/">2021</a> (6)
+            </li>
+            <li><a class="reference" href="/2022/">2022</a> (4)
+            </li>
+            <li><a class="reference" href="/2023/">2023</a> (2)
+            </li>
+          </ul>
+        </div>    </div>
+</article></main><footer id="footer"><p>
+</p>
+<div class="myfooter">
+  <div>
+    <img src="../../../../../images/hpy-logo.svg" alt="PyPy Logo">
+</div>
+  <div class="logotext">
+     Contents © 2024 <a href="mailto:hpy-dev@python.org">The HPy Team</a>
+    Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+  </div>
+  <div style="margin-left: auto">
+  <a href="../../../../../rss.xml">RSS feed</a>
+</div>
+
+            
+        
+
+    </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script><script src="../../../../../assets/js/styles.js"></script></footer>
+</div>
+</body>
+</html>

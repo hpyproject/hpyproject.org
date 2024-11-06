@@ -1,0 +1,4 @@
+Sitemap: https://hpyproject.org/sitemapindex.xml
+
+User-Agent: *
+Host: hpyproject.org

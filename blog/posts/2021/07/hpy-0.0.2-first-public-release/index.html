@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html prefix="
+        og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hpy 0.0.2: First public release | HPy</title>
+<link href="../../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/styles.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://hpyproject.org/blog/posts/2021/07/hpy-0.0.2-first-public-release/">
+<link rel="icon" href="../../../../../favicon2.ico" sizes="16x16">
+<link rel="icon" href="../../../../../favicon32x32.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../../../../assets/css/tipuesearch.css">
+<meta name="author" content="antocuni">
+<link rel="prev" href="../../05/hpy-irc-moves-to-libera-chat/" title="#hpy IRC moves to Libera.Chat" type="text/html">
+<link rel="next" href="../../10/hpy-0.0.3-second-public-release/" title="hpy 0.0.3: Second public release" type="text/html">
+<meta property="og:site_name" content="HPy">
+<meta property="og:title" content="hpy 0.0.2: First public release">
+<meta property="og:url" content="https://hpyproject.org/blog/posts/2021/07/hpy-0.0.2-first-public-release/">
+<meta property="og:description" content="HPy 0.0.2 is out! This is the first version which is officially released and
+made available on PyPI.
+The major highlight of this release is that it is supported by three different
+Python implementatio">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-07-15T15:00:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+        <header id="header"><!-- Adapted from https://www.taniarascia.com/responsive-dropdown-navigation-bar --><section class="navigation"><div class="nav-container">
+            <div class="brand">
+                <a href="../../../../../index.html">
+                    <image id="toplogo" src="../../../../../images/hpy-logo.svg" width="75px;" alt="HPy/"></image></a>
+            </div>
+            <div class="nav-container-1">
+                    <div class="searchform" role="search">
+                        
+<form class="navbar-form navbar-left" action="../../../../../search/index.html" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" id="tipue_search_input" name="q" placeholder="Search…" autocomplete="off">
+</div>
+</form>
+
+                    </div>
+                <nav><ul class="nav-list">
+<li> <a href="https://hpy.readthedocs.io/">Dev Docs</a> </li>  
+            <li> 
+                <a href="#!">Blog</a>
+                <ul class="nav-dropdown">
+<li> <a href="../../../../../blog">Index</a> </li>  
+                    <li> <a href="../../../../../categories">Tags</a> </li>  
+                    <li> <a href="../../../../../archive.html">Archive by year</a> </li>  
+                    <li> <a href="../../../../../rss.xml">RSS feed</a> </li>  
+                </ul>
+</li>
+
+                    </ul></nav><div class="nav-mobile">
+                    <a id="nav-toggle" href="#!"> <span></span></a>
+                </div>
+            </div>
+        </div>
+    </section></header><div id="container">
+         <main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><div class="post">
+          <header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">hpy 0.0.2: First public release</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    <a class="u-url" href="../../../../../authors/antocuni/">antocuni</a>
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2021-07-15T15:00:00Z" itemprop="datePublished" title="2021-07-15 15:00">2021-07-15 15:00</time></a>
+            </p>
+                <p class="commentline">            <a href="#utterances-thread">Comments</a>
+
+
+            
+        </p>
+</div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p>HPy 0.0.2 is out! This is the first version which is officially released and
+made available on PyPI.</p>
+<p>The major highlight of this release is that it is supported by three different
+Python implementations: CPython, PyPy and GraalPython.</p>
+<!--TEASER_END-->
+
+<h2 id="what-is-hpy">What is HPy?<a href="#what-is-hpy" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<p>HPy provides a new API for extending Python in C. In other words, you use
+<code>#include &lt;hpy.h&gt;</code> instead of <code>#include &lt;Python.h&gt;</code>. For more info, look at
+the
+<a href="https://docs.hpyproject.org/en/latest/overview.html">official documentation</a>.</p>
+<h2 id="installation">Installation<a href="#installation" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<p>HPy 0.0.2 only supports Linux systems, and it's only tested on
+<code>x86_64</code>. Windows support is already present on master, and it will be
+included in the next release.</p>
+<p>For CPython, you need to install it manually, using pip:</p>
+<div class="code"><pre class="code literal-block">$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">hpy</span><span class="o">==</span><span class="m">0</span>.0.2
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, we provide only the <code>sdist</code> (i.e., the <code>.tar.gz</code>, no binary
+wheels). See also
+<a href="https://github.com/hpyproject/hpy/issues/223">issue #223</a>, contributions
+are welcome :).</p>
+</div>
+<p>PyPy and GraalPython ships their own version of HPy, so no installation is
+necessary. HPy 0.0.2 will be included in the next release of both, i.e. PyPy
+7.3.6 (expected in October 2021) and GraalPython 21.2.0 (expected on
+2021-07-20). In the meantime, you can download a nightly build:</p>
+<ul>
+<li>
+<p><a href="http://buildbot.pypy.org/nightly/py3.7/">PyPy 3.7 nightly builds</a>, for example <a href="http://buildbot.pypy.org/nightly/py3.7/pypy-c-jit-102761-3bf99c09018b-linux64.tar.bz2">revision 3bf99c09018b</a></p>
+</li>
+<li>
+<p>GraalPython: download the latest <code>graalpython-dev</code> package from
+  <a href="https://github.com/graalvm/graalvm-ce-dev-builds/releases">this page</a></p>
+</li>
+</ul>
+<p>To double check the version of HPy which is shipped with those, you can either
+use <code>pip</code> or <code>hpy.universal.get_version()</code>:</p>
+<div class="code"><pre class="code literal-block"><span class="err">$</span><span class="w"> </span><span class="n">pypy</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">pip</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">hpy</span>
+<span class="n">Name</span><span class="p">:</span><span class="w"> </span><span class="n">hpy</span>
+<span class="n">Version</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0.2</span>
+<span class="n">Summary</span><span class="p">:</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">better</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Python</span>
+<span class="n">Home</span><span class="o">-</span><span class="n">page</span><span class="p">:</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hpyproject</span><span class="o">.</span><span class="n">org</span>
+<span class="n">Author</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">HPy</span><span class="w"> </span><span class="n">team</span>
+<span class="n">Author</span><span class="o">-</span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">hpy</span><span class="o">-</span><span class="n">dev</span><span class="nd">@python</span><span class="o">.</span><span class="n">org</span>
+<span class="n">License</span><span class="p">:</span><span class="w"> </span><span class="n">MIT</span>
+<span class="o">...</span>
+
+<span class="err">$</span><span class="w"> </span><span class="n">pypy</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="s1">'import hpy.universal; print(hpy.universal.get_version()[0])'</span>
+<span class="mf">0.0.2</span>
+</pre></div>
+
+
+<h2 id="api">API<a href="#api" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<p>At the moment HPy supports only a small fraction of the full API offered by
+the old Python/C API, but it is enough to write non-trivial extensions, and
+the documentation is
+scarce. <a href="https://github.com/hpyproject/hpy/blob/release/0.0.2/hpy/tools/autogen/public_api.h#L107-L288"><code>public_api.h</code></a>,
+which is used to autogenerate parts of the HPy code, is a reliable list of all
+the supported functions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The HPy API is still considered in alpha status and it's subject to change
+between versions. In fact, the current master is already incompatible with
+hpy-0.0.2 because of
+<a href="https://github.com/hpyproject/hpy/pull/182">PR #182</a>, which renamed all
+occurences of <code>HPyContext</code> into <code>HPyContext*</code>.</p>
+</div>
+<h2 id="examples">Examples<a href="#examples" class="headerlink" title="Permalink to this heading">¶</a></h2>
+<p>The best way to get a glimpse of how to use HPy is to look at examples:</p>
+<ul>
+<li>
+<p>the HPy repository contains a
+  <a href="https://github.com/hpyproject/hpy/tree/release/0.0.2/proof-of-concept">"proof of concept" package</a>.
+  Make sure to checkout the branch <code>release/0.0.2</code>.</p>
+</li>
+<li>
+<p><a href="https://github.com/hpyproject/ultrajson-hpy/tree/hpy-0.0.2"><code>ultrajson-hpy</code></a>
+  is a port of the popular <code>ultrajson</code> package. Make sure to checkout the
+  <code>hpy-0.0.2</code> branch.</p>
+</li>
+<li>
+<p><a href="https://github.com/hpyproject/piconumpy/tree/hpy-0.0.2"><code>piconumpy</code></a>
+  contains a very tiny implementation of an <code>array</code>-like class. Make sure to
+  checkout the <code>hpy-0.0.2</code> branch.</p>
+</li>
+</ul>
+</div>
+      <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../05/hpy-irc-moves-to-libera-chat/" rel="prev" title="#hpy IRC moves to Libera.Chat">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../10/hpy-0.0.3-second-public-release/" rel="next" title="hpy 0.0.3: Second public release">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                      <div data-title="hpy 0.0.2: First public release" id="utterances-thread"></div>
+        <script src="https://utteranc.es/client.js" repo="hpyproject/hpyproject.org" issue-term="title" label="Comments" theme="github-light" crossorigin="anonymous"></script></section>
+</div>
+    <div class="sidebar">
+<div>
+  <h2>
+    The HPy blogposts
+  </h2>
+  <div>
+    Create a guest post via a PR to the <a href="https://github.com/hpyproject/hpyproject.github.io/">source repo</a>
+  </div>
+</div>
+    <div id="global-recent-posts">
+    <h2>
+      Recent Posts
+    </h2>
+    <ul class="post-list">
+      <li>
+        <a href="/blog/posts/2023/10/hpy-0.9.0-fourth-public-release/" class="listtitle">hpy 0.9.0: Fourth public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2023/10/hpy-meetup-2023/" class="listtitle">HPy meetup and CPython core dev sprint in Brno (Oct 7-10, 2023)</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/09/hpy_sprint_2022_report/" class="listtitle">HPy Sprint Status Update and Feedback Session</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/09/hpy_on_graal_and_mpl/" class="listtitle">HPy on GraalPy and Matplotlib/HPy</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/07/dusseldorf-sprint-2022/" class="listtitle">Dusseldorf PyPy/HPy/other sprint Sept 19-23, 2022</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2022/06/hpy-0.0.4-third-public-release/" class="listtitle">hpy 0.0.4: Third public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/10/hpy-0.0.3-second-public-release/" class="listtitle">hpy 0.0.3: Second public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/07/hpy-0.0.2-first-public-release/" class="listtitle">hpy 0.0.2: First public release</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/05/hpy-irc-moves-to-libera-chat/" class="listtitle">#hpy IRC moves to Libera.Chat</a>
+      </li>
+      <li>
+        <a href="/blog/posts/2021/05/hpy-python-language-summit/" class="listtitle">HPy @ Python Language Summit</a>
+      </li>
+    </ul>
+  </div>
+
+          <div id="global-archive-list">
+          <h2>
+            Archives
+          </h2>
+          <ul class="archive-level archive-level-1">
+            <li><a class="reference" href="/2021/">2021</a> (6)
+            </li>
+            <li><a class="reference" href="/2022/">2022</a> (4)
+            </li>
+            <li><a class="reference" href="/2023/">2023</a> (2)
+            </li>
+          </ul>
+        </div>    </div>
+</article></main><footer id="footer"><p>
+</p>
+<div class="myfooter">
+  <div>
+    <img src="../../../../../images/hpy-logo.svg" alt="PyPy Logo">
+</div>
+  <div class="logotext">
+     Contents © 2024 <a href="mailto:hpy-dev@python.org">The HPy Team</a>
+    Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+  </div>
+  <div style="margin-left: auto">
+  <a href="../../../../../rss.xml">RSS feed</a>
+</div>
+
+            
+        
+
+    </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script><script src="../../../../../assets/js/styles.js"></script></footer>
+</div>
+</body>
+</html>

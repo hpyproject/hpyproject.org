@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HPy (Posts by hodgestar)</title><link>https://hpyproject.org/</link><description></description><atom:link href="https://hpyproject.org/authors/hodgestar.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:hpy-dev@python.org"&gt;The HPy Team&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Nov 2024 09:06:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>HPy Status Update</title><link>https://hpyproject.org/blog/posts/2021/05/may-status-update/</link><dc:creator>hodgestar</dc:creator><description>&lt;p&gt;HPy's first git commit was on Friday, 12 July 2019. Despite the crazy state
+of the world, &lt;a href="https://github.com/hpyproject/hpy/"&gt;HPy&lt;/a&gt; has come a long way
+since then. This is a quick update to say where we are now and what's planned
+for the immediate future.&lt;/p&gt;
+&lt;!--TEASER_END--&gt;
+
+&lt;h2&gt;What can one do with HPy right now?&lt;/h2&gt;
+&lt;p&gt;One can already port non-trivial Python extensions to the HPy API, but
+there is also still a lot of work to do. Things one can do right now
+with HPy include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Initialize an extension module&lt;/li&gt;
+&lt;li&gt;Create custom extension types&lt;/li&gt;
+&lt;li&gt;Create custom methods and functions&lt;/li&gt;
+&lt;li&gt;Interact with many built-in types (including dictionaries, tuples,
+  lists, strings, bytes and longs)&lt;/li&gt;
+&lt;li&gt;Raise and check exceptions&lt;/li&gt;
+&lt;li&gt;Parse arguments to C functions&lt;/li&gt;
+&lt;li&gt;Call Python functions&lt;/li&gt;
+&lt;li&gt;Compile an extension against either the "universal" or "cpython" ABIs (see below)&lt;/li&gt;
+&lt;li&gt;Load a single compiled "universal" extension into different Python implementations.&lt;/li&gt;
+&lt;li&gt;Put a "universal" extension into debug mode &lt;strong&gt;at runtime&lt;/strong&gt; (see below
+  for how this is possible without a performance penalty).&lt;/li&gt;
+&lt;li&gt;Compile extensions for POSIX and Windows (MSVC).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;An extension written using HPy may be compiled against either the "cpython" or
+"universal" ABI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;compiling against the "cpython" ABI produces an ordinary Python C extension.
+  The extension uses the HPy API only internally. From the point of view of
+  the Python implementation the compiled module is an ordinary C extension
+  that just happens to have been compiled using HPy. Note that as is the case
+  for ordinary C extensions, the modules produced target a specific
+  &lt;a href="https://www.python.org/dev/peps/pep-0425/"&gt;ABI tag&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;compiling against the "universal" ABI produces an HPy C extension. This
+  extension does not use the Python C API directly at all and the ABI
+  is unique (up to platform and HPy version number). The same compiled module
+  may thus be loaded by multiple Python versions and implementations.
+  A Python implementation must know how to load such an extension and have
+  implemented the HPy universal ABI. Universal ABI implementations exist for
+  CPython, PyPy and GraalPython.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Debug mode is implemented by replacing the HPy context with a debug mode
+context at runtime. The debug context wraps the original context and tracks
+all HPy API calls. Debug mode already supports finding handles that are
+leaked (i.e. not closed) and handles that are used after being closed.
+Additional debug features will be fairly straightforward to add, like for example checking for &lt;code&gt;NULL&lt;/code&gt; pointers or detecting whether the user is trying to call a function without holding the GIL.&lt;/p&gt;
+&lt;p&gt;The debug mode is written using HPy itself, so its implementation can be
+shared by different Python implementations that support HPy.&lt;/p&gt;
+&lt;h2&gt;What are the next steps?&lt;/h2&gt;
+&lt;p&gt;The big picture is that we're working towards writing a Cython backend
+and porting core features of numpy to HPy. There is still some way to go
+but the immediate next steps planned are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add support for storing long-lived references to other Python objects in
+  custom types, i.e. the equivalent of storing a &lt;code&gt;PyObject *&lt;/code&gt; in
+  one of the fields with the struct of a custom type. HPy handles are only for
+  short-lived references, so we need a GC-friendly way to store long-lived
+  references.
+  See &lt;a href="https://github.com/hpyproject/hpy/issues/9"&gt;issue #9&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Implement isolated module level state, to avoid using C static global
+  variables. This will be the HPy equivalent of
+  &lt;a href="https://www.python.org/dev/peps/pep-0573/"&gt;PEP 573&lt;/a&gt; and
+  &lt;a href="https://www.python.org/dev/peps/pep-0630/"&gt;PEP 630&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Implement multi-phase Python module initialization (HPy currently uses the
+  legacy module initialization).
+  See &lt;a href="https://github.com/hpyproject/hpy/pull/184"&gt;issue #183&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update the PyPy and GraalPython HPy implementations to support all the
+  latest HPy features.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start work on an HPy backend for Cython.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continuing work on a minimal port of numpy's array type to HPy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ask the CPython core developers whether we can find a way to support
+  HPy universal extensions directly within in CPython (currently we write
+  a small &lt;code&gt;.py&lt;/code&gt; file that knows how to load the universal extension, but
+  the presence of this stub file causes many small edge cases that are
+  annoying for HPy developers and users)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you'd like to work on any of these with us, drop us a note in the
+comments or mailing list or join us on IRC.&lt;/p&gt;
+&lt;p&gt;Happy hacking,
+The HPy Team.&lt;/p&gt;</description><guid>https://hpyproject.org/blog/posts/2021/05/may-status-update/</guid><pubDate>Fri, 07 May 2021 10:00:00 GMT</pubDate></item></channel></rss>
