@@ -34,7 +34,7 @@ Alternatively, users can comment on the GitHub issue directly.
 
 ## Build requirements
 
-Python 3.10 is required to build the web pages.
+Python 3.10 or 3.11 is required to build the web pages.
 
 ## Deployment
 
